@@ -20,5 +20,5 @@ Kho lưu trữ công khai trọn bộ **HTML Executive Proposals** ngắn gọn,
 
 ## Nguyên tắc Nội dung, Thương mại & Media
 - **Văn phong Executive Ngắn gọn**: Đọc lướt trong 60 giây nắm trọn 3 điểm nghẽn, 4 trụ cột giải pháp, bảng đối chiếu VND + e-VAT và lộ trình bắt đầu 7–14 ngày.
-- **Chính sách Gói Credit Tài trợ (Optional — High-Spend Tier)**: Cơ chế chuẩn cho mọi khách hàng là **Pay-as-you-go bằng VND (0₫ khởi tạo, không ép gói năm)**; Gói Credit đồng đầu tư / tài trợ chỉ mở như **cơ hội tùy chọn (optional)** xét duyệt riêng cho đối tác có quy mô chi trả lớn.
+- **Chính sách Thương mại & AI as Investment**: Cơ chế Pay-as-you-go VND minh bạch, linh hoạt theo dự án (0₫ khởi tạo, không ép gói năm); riêng các dự án/đối tác có quy mô đầu tư lớn có thể đăng ký xét duyệt gói tài trợ hạ tầng **AI as Investment**.
 - **Kiểm duyệt Khắt khe Video Demo**: Chỉ nhúng video khớp 100% chuyên ngành và an toàn B2B; 20 kịch bản video cần quay bổ sung được quản lý tập trung tại [`VIDEO_DEMO_REQUESTS.md`](VIDEO_DEMO_REQUESTS.md) và `/video-requests`.

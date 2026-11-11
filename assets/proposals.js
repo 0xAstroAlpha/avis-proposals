@@ -192,7 +192,7 @@ if (!Object.hasOwn(HTMLElement.prototype, "popover")) {
   }
 })();
 
-// 4. Copy Shareable Link Button
+// 4. Copy Shareable Link & Print Page Buttons
 (() => {
   for (const btn of document.querySelectorAll("[data-copy-url]")) {
     btn.addEventListener("click", async () => {
@@ -207,6 +207,10 @@ if (!Object.hasOwn(HTMLElement.prototype, "popover")) {
         }, 1800);
       } catch (_) {}
     });
+  }
+
+  for (const btn of document.querySelectorAll("[data-print-page]")) {
+    btn.addEventListener("click", () => window.print());
   }
 })();
 

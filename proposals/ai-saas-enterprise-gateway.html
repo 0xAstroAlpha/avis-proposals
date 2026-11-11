@@ -50,7 +50,7 @@
             <a class="btn btn-cta-azure" href="mailto:anhlhd@avis.net?subject=Đặt lịch Demo &amp; Tư vấn AVIS — Startup AI/SaaS, Doanh nghiệp Chuyển đổi số, App Publisher &amp; SI">Đặt lịch Demo (anhlhd@avis.net) →</a>
             <a class="btn btn-outline-sapphire" href="https://zalo.me/0917769263" target="_blank" rel="noopener">Zalo / Tele: 0917769263</a>
             <button type="button" class="btn btn-outline-sapphire" data-copy-url="">Sao chép Link</button>
-            <button type="button" class="btn btn-outline-sapphire" onclick="window.print()">In / Xuất PDF</button>
+            <button type="button" class="btn btn-outline-sapphire" data-print-page="">In / Xuất PDF</button>
           </div>
         </div>
         <div class="credential-band">
@@ -110,12 +110,12 @@
         <h2>Kiến trúc sản phẩm thiết kế riêng cho AI SaaS &amp; Gateway API</h2>
       </div>
       <div class="gateway-code-stage">
-      <div class="hero-media-bar">
+      <div id="gateway-sdk-label" class="hero-media-bar">
         <span>UNIFIED OPENAI-COMPATIBLE SDK · AVIS.XYZ/V1</span>
         <span>OPENAI SDK · VND</span>
       </div>
       <div class="hero-code-frame">
-        <pre class="hero-code-pre"><code><span class="tok-kw">from</span> openai <span class="tok-kw">import</span> OpenAI
+        <pre class="hero-code-pre" role="region" aria-labelledby="gateway-sdk-label" tabindex="0"><code><span class="tok-kw">from</span> openai <span class="tok-kw">import</span> OpenAI
 
 client = OpenAI(
     base_url=<span class="tok-str">"https://avis.xyz/v1"</span>,
@@ -193,7 +193,7 @@ res = client.chat.completions.create(
             <div>
               <h3>Hệ sinh thái Phân phối Người dùng thật &amp; Tùy chọn Gói Enterprise</h3>
               <p>AVIS là lớp hạ tầng và phân phối — tuyệt đối không cạnh tranh với ứng dụng của đối tác.</p>
-              <ul class="avis-list"><li><strong>Hỗ trợ kỹ thuật cùng múi giờ:</strong> Kỹ sư nền tảng Việt Nam tư vấn trực tiếp kiến trúc multi-model routing.</li><li><strong>AVIS App Store &amp; Nghiện AI:</strong> Đưa ứng dụng tiếp cận cộng đồng 631K+ thành viên (5,2M+ lượt xem/tháng).</li><li><strong>Tùy chọn Enterprise (Optional):</strong> Xét duyệt gói Credit PoC &amp; kết nối VC Network cho khách hàng có sản lượng API lớn.</li></ul>
+              <ul class="avis-list"><li><strong>Hỗ trợ kỹ thuật cùng múi giờ:</strong> Kỹ sư nền tảng Việt Nam tư vấn trực tiếp kiến trúc multi-model routing.</li><li><strong>AVIS App Store &amp; Nghiện AI:</strong> Đưa ứng dụng tiếp cận cộng đồng 631K+ thành viên (5,2M+ lượt xem/tháng).</li><li><strong>Tài trợ Hạ tầng (AI as Investment):</strong> Xét duyệt gói tài trợ hạ tầng AI &amp; kết nối VC Network cho đối tác quy mô sản lượng lớn.</li></ul>
             </div>
             <aside class="tabpanel-meta">
               <strong>HẬU THUẪN HỆ SINH THÁI</strong>
@@ -209,18 +209,18 @@ res = client.chat.completions.create(
 
   <section class="section section-alt">
   <div class="container">
-    <div class="section-label"><span class="avis-tri avis-tri--up avis-tri--marker" aria-hidden="true"></span> HỆ SINH THÁI TĂNG TRƯỞNG &amp; TÙY CHỌN DÀNH CHO KHÁCH HÀNG LỚN</div>
+    <div class="section-label"><span class="avis-tri avis-tri--up avis-tri--marker" aria-hidden="true"></span> HỆ SINH THÁI TĂNG TRƯỞNG &amp; GÓI DOANH NGHIỆP LỚN</div>
     <div class="ott-panel">
       <div class="ott-main">
         <div class="ott-eyebrow">
           <span>ECOSYSTEM GROWTH &amp; ENTERPRISE PROGRAM</span>
-          <span class="optional-badge">OPTIONAL · HIGH-VOLUME / ENTERPRISE</span>
+          <span class="optional-badge">AI AS INVESTMENT · HIGH-VOLUME / ENTERPRISE</span>
         </div>
-        <h3>Pay-as-you-go Chuẩn Mực Từ Ngày Đầu — Đặc quyền Mở Rộng Khi Scale Lớn</h3>
-        <p>Mọi đội ngũ phát triển đều có thể mở tài khoản tự phục vụ tại avis.xyz với 0₫ phí khởi tạo và công thức giá cố định +10% VND. Riêng với các Doanh nghiệp lớn (Enterprise), App Publisher hoặc Startup Scale-up có lưu lượng API cao, AVIS cung cấp thêm gói đồng hành tùy chọn (optional) qua thẩm định.</p>
+        <h3>Pay-as-you-go Linh Hoạt Từ Ngày Đầu — Tài Trợ Hạ Tầng Khi Scale Lớn</h3>
+        <p>Cơ chế Pay-as-you-go VND minh bạch, linh hoạt theo dự án tại avis.xyz với 0₫ phí khởi tạo và mức phí cố định +10% VND. Riêng các Doanh nghiệp lớn (Enterprise), App Publisher hoặc Startup Scale-up có quy mô lưu lượng cao có thể đăng ký xét duyệt gói tài trợ hạ tầng AI as Investment.</p>
       </div>
       <ul class="ott-list">
-        <li><strong>Mặc định cho mọi Developer/Team:</strong> Tích hợp ngay trong 5 phút, nạp bao nhiêu dùng bấy nhiêu, xuất e-VAT đầy đủ.</li><li><strong>Kênh phân phối người dùng thật:</strong> Niêm yết sản phẩm lên AVIS App Store &amp; lan tỏa qua cộng đồng Nghiện AI 631K+.</li><li><strong>Đặc quyền Enterprise (Optional):</strong> Xét duyệt gói PoC Credit chuyển đổi hạ tầng, hỗ trợ kiến trúc riêng &amp; kết nối VC.</li>
+        <li><strong>Pay-as-you-go theo nhu cầu:</strong> Tích hợp ngay trong 5 phút, nạp bao nhiêu dùng bấy nhiêu, xuất e-VAT đầy đủ.</li><li><strong>Kênh phân phối người dùng thật:</strong> Niêm yết sản phẩm lên AVIS App Store &amp; lan tỏa qua cộng đồng Nghiện AI 631K+.</li><li><strong>Gói AI as Investment:</strong> Xét duyệt tài trợ hạ tầng AI chuyển đổi hệ thống, hỗ trợ kiến trúc riêng &amp; kết nối VC.</li>
       </ul>
     </div>
   </div>
@@ -294,9 +294,9 @@ res = client.chat.completions.create(
           <p>Đội ngũ đối tác tự chạy ra sản phẩm hoàn chỉnh; đối chiếu chất lượng, tốc độ và bảng kê chi phí VND.</p>
         </div>
         <div class="step-box step-box--optional">
-          <span class="step-week">BƯỚC 04 · MỞ RỘNG (OPTIONAL)</span>
-          <h3>Hợp đồng e-VAT &amp; Gói Lớn</h3>
-          <p>Ký hợp đồng xuất e-VAT định kỳ; tùy chọn xét duyệt Gói Credit đồng hành &amp; kết nối OTT/VC cho đối tác quy mô chi trả lớn.</p>
+          <span class="step-week">BƯỚC 04 · MỞ RỘNG QUY MÔ</span>
+          <h3>Hợp đồng e-VAT &amp; AI as Investment</h3>
+          <p>Ký hợp đồng xuất e-VAT định kỳ; riêng đối tác có quy mô đầu tư lớn có thể đăng ký xét duyệt gói tài trợ hạ tầng AI as Investment &amp; kết nối OTT/VC.</p>
         </div>
       </div>
     </div>
@@ -306,18 +306,13 @@ res = client.chat.completions.create(
 <footer class="site-footer">
   <div class="container footer-grid">
     <div>
-      <img class="footer-logo" src="../assets/brand/logo/gateway/avis-gateway-with-name-white.svg" alt="AVIS Gateway" height="32">
+      <img class="footer-logo" src="../assets/brand/logo/gateway/avis-gateway-with-name-white.svg" alt="AVIS Gateway" height="32" loading="lazy">
       <strong>CÔNG TY CỔ PHẦN AVIS AI (AVIS AI JOINT STOCK COMPANY)</strong><br>
-      MST: 0318832218 · Số 2 Trương Quốc Dung, Quận Phú Nhuận, TP. Hồ Chí Minh · Hệ sinh thái Ninety Eight<br>
-      Liên hệ Hợp tác: <a href="mailto:anhlhd@avis.net">anhlhd@avis.net</a> ·
-      <a href="https://zalo.me/0917769263" target="_blank" rel="noopener">0917769263 (Zalo, Tele)</a><br>
-      Gateway: <a href="https://avis.xyz" target="_blank" rel="noopener">avis.xyz</a> ·
-      Creative Studio: <a href="https://studio.avis.net" target="_blank" rel="noopener">studio.avis.net</a>
+      MST: 0318832218 · Số 2 Trương Quốc Dung, Quận Phú Nhuận, TP. Hồ Chí Minh · Hệ sinh thái Ninety Eight
     </div>
     <div class="footer-links">
-      PORTAL: <a href="https://avis-proposals.vercel.app">avis-proposals.vercel.app</a><br>
-      DIRECT CONTACT: <a href="mailto:anhlhd@avis.net">anhlhd@avis.net</a> · <a href="tel:0917769263">0917769263</a><br>
-      BRAND SYSTEM: AVIS OFFICIAL GUIDELINE V2
+      EMAIL: <a href="mailto:anhlhd@avis.net">anhlhd@avis.net</a> · ZALO / TELE: <a href="https://zalo.me/0917769263" target="_blank" rel="noopener">0917769263</a><br>
+      GATEWAY: <a href="https://avis.xyz" target="_blank" rel="noopener">avis.xyz</a> · CREATIVE STUDIO: <a href="https://studio.avis.net" target="_blank" rel="noopener">studio.avis.net</a>
     </div>
   </div>
 </footer>
