@@ -100,7 +100,6 @@ if (!Object.hasOwn(HTMLElement.prototype, "popover")) {
     });
   }
 
-  // Fallback for browsers without scroll-driven animations on horizontal tab scrollers
   if (!CSS.supports("animation-timeline", "scroll()")) {
     for (const scroller of document.querySelectorAll(".tablist-scroller")) {
       const [first, last] = [scroller.firstElementChild, scroller.lastElementChild];
@@ -122,45 +121,77 @@ if (!Object.hasOwn(HTMLElement.prototype, "popover")) {
   }
 })();
 
-// 3. Light-Dismiss Video Showcase Dialog + Safari Fallback (modern-web-guidance: light-dismiss-a-dialog)
+// 3. Direct Inline Video Lazy-Load Fallback & Exclusive Playback (modern-web-guidance: lazy-load-video-and-audio)
 (() => {
-  const dialog = document.getElementById("demoVideoDialog");
-  const videoEl = document.getElementById("dialogVideoPlayer");
-  const titleEl = document.getElementById("demoDialogTitle");
-  if (!dialog || !videoEl || !titleEl) return;
+  const allVideos = Array.from(document.querySelectorAll("video"));
 
-  for (const btn of document.querySelectorAll("[data-video-src]")) {
-    btn.addEventListener("click", () => {
-      const src = btn.getAttribute("data-video-src") || "";
-      const title = btn.getAttribute("data-video-title") || "AVIS Showcase Demo";
-      const poster = btn.getAttribute("data-video-poster") || "";
-      titleEl.textContent = title;
-      if (poster) videoEl.setAttribute("poster", poster);
-      videoEl.src = src;
-      dialog.showModal();
-      videoEl.play().catch(() => {});
+  // Ensure playing one embedded video automatically pauses any other playing video
+  for (const vid of allVideos) {
+    vid.addEventListener("play", () => {
+      for (const other of allVideos) {
+        if (other !== vid && !other.paused) {
+          other.pause();
+        }
+      }
     });
   }
 
-  dialog.addEventListener("close", () => {
-    videoEl.pause();
-    videoEl.removeAttribute("src");
-    videoEl.load();
-  });
+  // Respect prefers-reduced-motion if any video ever uses autoplay
+  const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  function syncReducedMotion(prefersReducedMotion) {
+    for (const video of document.querySelectorAll("video[autoplay]")) {
+      if (prefersReducedMotion) {
+        video.removeAttribute("autoplay");
+        video.pause();
+      }
+    }
+  }
+  syncReducedMotion(reducedMotionQuery.matches);
+  reducedMotionQuery.addEventListener("change", (e) => syncReducedMotion(e.matches));
 
-  // Mandatory fallback for browsers without <dialog closedby> support (e.g. Safari)
-  if (!("closedBy" in HTMLDialogElement.prototype)) {
-    dialog.addEventListener("click", (event) => {
-      if (event.target !== dialog) return;
-      const rect = dialog.getBoundingClientRect();
-      const isDialogContent =
-        rect.top <= event.clientY &&
-        event.clientY <= rect.top + rect.height &&
-        rect.left <= event.clientX &&
-        event.clientX <= rect.left + rect.width;
-      if (isDialogContent) return;
-      dialog.close();
-    });
+  // IntersectionObserver fallback for browsers without native HTMLMediaElement.prototype.loading (e.g. Firefox/Safari)
+  const supportsLazyMedia = Object.hasOwn(HTMLMediaElement.prototype, "loading");
+  if (!supportsLazyMedia) {
+    const lazyVideos = document.querySelectorAll('video[loading="lazy"]');
+    const mediaObserver = new IntersectionObserver(
+      (entries, observer) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          const media = entry.target;
+          if (media.dataset.poster) {
+            media.poster = media.dataset.poster;
+            delete media.dataset.poster;
+          }
+          if (media.dataset.preload) {
+            media.preload = media.dataset.preload;
+            delete media.dataset.preload;
+          }
+          for (const source of media.querySelectorAll("source[data-src]")) {
+            source.src = source.dataset.src;
+            delete source.dataset.src;
+          }
+          media.load();
+          observer.unobserve(media);
+        }
+      },
+      { rootMargin: "240px 0px" }
+    );
+
+    for (const media of lazyVideos) {
+      if (media.hasAttribute("poster")) {
+        media.dataset.poster = media.getAttribute("poster");
+        media.removeAttribute("poster");
+      }
+      if (media.hasAttribute("preload") && media.getAttribute("preload") !== "none") {
+        media.dataset.preload = media.getAttribute("preload");
+      }
+      for (const source of media.querySelectorAll("source[src]")) {
+        source.dataset.src = source.getAttribute("src");
+        source.removeAttribute("src");
+      }
+      media.preload = "none";
+      mediaObserver.observe(media);
+    }
   }
 })();
 
@@ -173,7 +204,7 @@ if (!Object.hasOwn(HTMLElement.prototype, "popover")) {
       try {
         await navigator.clipboard.writeText(resolved);
         const orig = btn.textContent;
-        btn.textContent = "Đã sao chép link ✓";
+        btn.textContent = "ĐÃ SAO CHÉP LINK ✓";
         setTimeout(() => {
           btn.textContent = orig;
         }, 1800);

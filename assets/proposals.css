@@ -1,46 +1,213 @@
 /* ==========================================================================
-   AVIS Executive Proposals Design System
-   Synthesized from avis-showcase.netlify.app + avis-credential.netlify.app
+   AVIS Executive Proposals — Official Brand Guideline V2 Stylesheet
+   Source of truth:
+     - Branding/docs/design-guidelines.md
+     - Branding/assets/design-system/avis-tokens.css & avis-shapes.css
+     - Branding/plans/avis-design-layouts/layout-06-media-frame-studio.html
    ========================================================================== */
 
-:root {
-  /* Dark Cinematic Tokens (from avis-showcase & avis-credential dark slides) */
-  --bg-dark: #0c0e0c;
-  --bg-navy: #0e1a22;
-  --surface-dark: #131b22;
-  --surface-elevated: #18242e;
-  --border-dark: #243542;
-  --text-on-dark: #f2f5f7;
-  --text-muted-dark: #93aab9;
-
-  /* Warm Paper Executive Tokens (from avis-credential paper slides & showcase film section) */
-  --bg-paper: #f4f3ee;
-  --surface-paper: #ffffff;
-  --surface-subtle: #ebede8;
-  --border-paper: #cfd8dc;
-  --border-strong: #b0c0c8;
-  --ink: #172f3d;
-  --ink-secondary: #2f5566;
-  --ink-muted: #567384;
-
-  /* Brand Accents */
-  --azure: #1386aa;
-  --azure-deep: #0f6986;
-  --azure-light: #9ddce4;
-  --azure-tint: #e6f3f6;
-  --gold: #d9a74a;
-  --gold-deep: #8f6b28;
-  --gold-soft: rgba(217, 167, 74, 0.14);
-
-  /* Typography */
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-serif: "Cinzel", Georgia, "Times New Roman", serif;
-  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-
-  --max-w: 1240px;
-  --header-h: 4rem;
+/* 1. Self-hosted Official AVIS Brand V2 Fonts */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: url('brand/fonts/IBMPlexSans-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: 100 700;
+  font-stretch: 75% 100%;
+  font-style: normal;
+  font-display: swap;
 }
 
+@font-face {
+  font-family: 'IBM Plex Sans Condensed';
+  src: url('brand/fonts/IBMPlexSans_Condensed-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans Condensed';
+  src: url('brand/fonts/IBMPlexSans_Condensed-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('brand/fonts/IBMPlexMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('brand/fonts/IBMPlexMono-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('brand/fonts/IBMPlexMono-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('brand/fonts/IBMPlexMono-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avis Hybrid';
+  src: local('Avis Hybrid'), local('AvisHybrid-Bold'), local('AvisHybrid');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+/* 2. Official AVIS V2 Color, Shape, Typography & Spacing Tokens */
+:root {
+  /* Primary */
+  --avis-azure: #0080FB;              /* RGB 0/128/251 */
+  --avis-sea-white: #E8EEF5;          /* RGB 232/238/245 */
+  /* Secondary */
+  --avis-electric-turquoise: #65FFDB; /* RGB 101/255/219 */
+  --avis-sapphire: #1B346B;           /* Intense Sapphire Blue, RGB 27/52/107 */
+  --avis-flame-orange: #FC9D2B;       /* RGB 252/157/43 — Masterbrand only */
+  /* Supporting */
+  --avis-baby-turquoise: #DEF0EC;
+  --avis-baby-blue: #C5D9FF;
+  --avis-baby-orange: #F3ECE4;
+  --avis-baby-azure: #D7ECFF;
+  /* Sheet Neutrals */
+  --avis-white: #FFFFFF;
+  --avis-black: #000000;
+
+  /* Typography */
+  --avis-font-display: 'Avis Hybrid', 'IBM Plex Sans Condensed', 'IBM Plex Sans', sans-serif;
+  --avis-font-sans: 'IBM Plex Sans', -apple-system, 'Segoe UI', Arial, sans-serif;
+  --avis-font-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+
+  /* 8px Spacing Scale */
+  --avis-space-1: 4px;
+  --avis-space-2: 8px;
+  --avis-space-3: 12px;
+  --avis-space-4: 16px;
+  --avis-space-5: 24px;
+  --avis-space-6: 32px;
+  --avis-space-7: 48px;
+  --avis-space-8: 64px;
+  --avis-space-9: 96px;
+
+  /* Brand V2 Geometry: strictly square blocks, 0 radius */
+  --avis-radius: 0px;
+  --max-w: 1280px;
+  --header-h: 64px;
+
+  /* Official AVIS Triangle Shapes (1:1 cut from logo symbols) */
+  --avis-tri-up: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='85.892 25.477 117.5 63.53' width='117.5' height='63.53'%3E%3Cpath d='M90.6957 89.0067H198.591C202.855 89.0067 204.999 83.8443 201.981 80.8259L148.033 26.8781C146.165 25.0096 143.134 25.0096 141.254 26.8781L87.306 80.8259C84.2876 83.8443 86.4196 89.0067 90.6957 89.0067Z' fill='%23000'/%3E%3C/svg%3E");
+  --avis-tri-play: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='124.831 18.97 56.86 105.165' width='56.86' height='105.165'%3E%3Cpath d='M124.831 23.27L124.831 119.838C124.831 123.655 129.451 125.574 132.153 122.872L180.437 74.588C182.109 72.9156 182.109 70.2034 180.437 68.5203L132.153 20.2361C129.451 17.5346 124.831 19.4428 124.831 23.27Z' fill='%23000'/%3E%3C/svg%3E");
+}
+
+/* 3. Sub-brand Semantic Theme Mapping (strictly honoring row matrix in design-guidelines.md) */
+:root,
+[data-avis-brand="masterbrand"] {
+  --brand-primary: var(--avis-azure);
+  --brand-on-primary: var(--avis-white);
+  --brand-hero-sub-bg: var(--avis-sapphire);
+  --brand-hero-sub-fg: var(--avis-sea-white);
+  --brand-band-bg: var(--avis-electric-turquoise);
+  --brand-band-fg: var(--avis-sapphire);
+  --brand-text: var(--avis-sapphire);
+  --brand-surface: var(--avis-white);
+  --brand-surface-alt: var(--avis-sea-white);
+  --brand-surface-soft: var(--avis-baby-azure);
+  --brand-dark-bg: var(--avis-sapphire);
+  --brand-dark-fg: var(--avis-sea-white);
+  --brand-dark-accent: var(--avis-electric-turquoise);
+  --brand-marker-color: var(--avis-azure);
+  --brand-tri-mask: var(--avis-tri-up);
+  --brand-tri-ratio: 117.5 / 63.53;
+}
+
+[data-avis-brand="creative-studio"] {
+  --brand-primary: var(--avis-azure);
+  --brand-on-primary: var(--avis-white);
+  --brand-hero-sub-bg: var(--avis-sapphire);
+  --brand-hero-sub-fg: var(--avis-sea-white);
+  --brand-band-bg: var(--avis-electric-turquoise);
+  --brand-band-fg: var(--avis-sapphire);
+  --brand-text: var(--avis-sapphire);
+  --brand-surface: var(--avis-white);
+  --brand-surface-alt: var(--avis-baby-azure);
+  --brand-surface-soft: var(--avis-baby-turquoise);
+  --brand-dark-bg: var(--avis-sapphire);
+  --brand-dark-fg: var(--avis-sea-white);
+  --brand-dark-accent: var(--avis-electric-turquoise);
+  --brand-marker-color: var(--avis-azure);
+  --brand-tri-mask: var(--avis-tri-play);
+  --brand-tri-ratio: 56.86 / 105.165;
+}
+
+[data-avis-brand="gateway"] {
+  --brand-primary: var(--avis-sapphire);
+  --brand-on-primary: var(--avis-sea-white);
+  --brand-hero-sub-bg: var(--avis-sea-white);
+  --brand-hero-sub-fg: var(--avis-sapphire);
+  --brand-band-bg: var(--avis-baby-blue);
+  --brand-band-fg: var(--avis-sapphire);
+  --brand-text: var(--avis-sapphire);
+  --brand-surface: var(--avis-white);
+  --brand-surface-alt: var(--avis-sea-white);
+  --brand-surface-soft: var(--avis-baby-azure);
+  --brand-dark-bg: var(--avis-sapphire);
+  --brand-dark-fg: var(--avis-sea-white);
+  --brand-dark-accent: var(--avis-baby-blue);
+  --brand-marker-color: var(--avis-sapphire);
+  --brand-tri-mask: var(--avis-tri-up);
+  --brand-tri-ratio: 117.5 / 63.53;
+}
+
+/* 4. Official AVIS Triangle Marker Classes */
+.avis-tri {
+  display: inline-block;
+  flex: none;
+  background: currentColor;
+  -webkit-mask: var(--avis-tri-mask) center / contain no-repeat;
+  mask: var(--avis-tri-mask) center / contain no-repeat;
+}
+
+.avis-tri--up {
+  --avis-tri-mask: var(--avis-tri-up);
+  aspect-ratio: 117.5 / 63.53;
+}
+
+.avis-tri--play {
+  --avis-tri-mask: var(--avis-tri-play);
+  aspect-ratio: 56.86 / 105.165;
+}
+
+.avis-tri--marker {
+  margin-inline-end: 0.5em;
+}
+
+.avis-tri--marker.avis-tri--up {
+  inline-size: 0.9em;
+  vertical-align: 0.08em;
+}
+
+.avis-tri--marker.avis-tri--play {
+  block-size: 0.8em;
+  vertical-align: -0.04em;
+}
+
+/* 5. Base Document Reset */
 *,
 *::before,
 *::after {
@@ -54,10 +221,11 @@ html {
 
 body {
   margin: 0;
-  font-family: var(--font-sans);
-  background: var(--bg-paper);
-  color: var(--ink);
+  font-family: var(--avis-font-sans);
+  font-size: 16px;
   line-height: 1.6;
+  background: var(--avis-white);
+  color: var(--brand-text);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -66,21 +234,33 @@ a {
 }
 
 :focus-visible {
-  outline: 3px solid var(--azure);
-  outline-offset: 3px;
+  outline: 3px solid var(--avis-azure);
+  outline-offset: 2px;
+}
+
+.container {
+  max-inline-size: var(--max-w);
+  margin-inline: auto;
+  padding-inline: var(--avis-space-6);
+}
+
+@media (width < 640px) {
+  .container {
+    padding-inline: var(--avis-space-4);
+  }
 }
 
 /* ==========================================================================
-   Responsive Site Header & Navbar (modern-web-guidance: navbar)
+   6. Responsive Site Header & Navigation (modern-web-guidance: navbar)
+   Logo placed strictly on approved pure White (#FFFFFF) surface
    ========================================================================== */
 .site-header {
   position: sticky;
   inset-block-start: 0;
   z-index: 90;
-  background: rgba(14, 26, 34, 0.94);
-  backdrop-filter: blur(12px);
-  border-block-end: 1px solid var(--border-dark);
-  color: var(--text-on-dark);
+  background: var(--avis-white);
+  color: var(--avis-sapphire);
+  border-block-end: 1px solid var(--avis-black);
 }
 
 .site-header.is-measuring,
@@ -91,12 +271,18 @@ a {
 .header-inner {
   max-inline-size: var(--max-w);
   margin-inline: auto;
-  padding-inline: 1.25rem;
+  padding-inline: var(--avis-space-6);
   min-block-size: var(--header-h);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: var(--avis-space-4);
+}
+
+@media (width < 640px) {
+  .header-inner {
+    padding-inline: var(--avis-space-4);
+  }
 }
 
 .header-inner > * {
@@ -107,50 +293,55 @@ a {
 .site-logo {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: var(--avis-space-3);
   text-decoration: none;
-  font-weight: 700;
-  font-size: 0.92rem;
+  padding-block: var(--avis-space-2);
+}
+
+/* Official SVG logo minimum clear space & height >= 24px */
+.site-logo img {
+  block-size: 26px;
+  inline-size: auto;
+  display: block;
+}
+
+.site-logo-divider {
+  inline-size: 1px;
+  block-size: 20px;
+  background: var(--avis-sapphire);
+  margin-inline-start: var(--avis-space-2);
+}
+
+.site-logo-tag {
+  font-family: var(--avis-font-mono);
+  font-size: 11px;
+  font-weight: 500;
   letter-spacing: 0.06em;
-  color: #ffffff;
-}
-
-.site-logo svg {
-  inline-size: 28px;
-  block-size: 18px;
-  fill: var(--gold);
-}
-
-.logo-badge {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  padding: 0.15rem 0.45rem;
-  border-radius: 3px;
-  background: rgba(157, 220, 228, 0.14);
-  color: var(--azure-light);
-  border: 1px solid rgba(157, 220, 228, 0.3);
-  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--avis-sapphire);
 }
 
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--avis-space-2);
 }
 
 .menu-button {
   anchor-name: --menu-button;
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.45rem 0.8rem;
-  border-radius: 4px;
-  border: 1px solid var(--border-dark);
-  background: var(--surface-dark);
-  color: var(--text-on-dark);
-  font: inherit;
-  font-size: 0.85rem;
+  gap: var(--avis-space-2);
+  padding: 10px 16px;
+  border-radius: var(--avis-radius);
+  border: 2px solid var(--avis-sapphire);
+  background: var(--avis-white);
+  color: var(--avis-sapphire);
+  font-family: var(--avis-font-mono);
+  font-size: 12px;
   font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   cursor: pointer;
 }
 
@@ -158,21 +349,20 @@ a {
   list-style: none;
   position: fixed;
   inset: auto;
-  inset-block-start: 4.25rem;
+  inset-block-start: 68px;
   inset-block-start: anchor(--menu-button bottom);
-  inset-inline-end: 1rem;
-  inline-size: min(86dvw, 23rem);
-  max-inline-size: calc(100dvw - 2rem);
+  inset-inline-end: 16px;
+  inline-size: min(88dvw, 360px);
+  max-inline-size: calc(100dvw - 32px);
   block-size: fit-content;
-  max-block-size: calc(100dvh - 5.5rem);
-  margin-block-start: 0.4rem;
-  padding: 0.6rem;
+  max-block-size: calc(100dvh - 84px);
+  margin-block-start: 4px;
+  padding: var(--avis-space-3);
   overflow: auto;
-  background: var(--bg-navy);
-  color: var(--text-on-dark);
-  border: 1px solid var(--border-dark);
-  border-radius: 6px;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  background: var(--avis-white);
+  color: var(--avis-sapphire);
+  border: 2px solid var(--avis-sapphire);
+  border-radius: var(--avis-radius);
 }
 
 .site-menu:not(:is(:popover-open, .\:popover-open)) {
@@ -181,38 +371,39 @@ a {
 
 .site-menu:is(:popover-open, .\:popover-open) {
   display: grid;
-  gap: 0.2rem;
+  gap: 2px;
 }
 
 .site-menu a {
   display: block;
-  padding: 0.5rem 0.7rem;
+  padding: 8px 10px;
   text-decoration: none;
-  font-size: 0.82rem;
+  font-family: var(--avis-font-mono);
+  font-size: 12px;
   font-weight: 500;
-  color: #d7e4ec;
-  border-radius: 4px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--avis-sapphire);
   position: relative;
 }
 
 .site-menu a:hover {
-  background: rgba(157, 220, 228, 0.1);
-  color: #ffffff;
+  background: var(--avis-sea-white);
 }
 
-/* WCAG 1.4.1: indicate current page with shape + high-contrast color (>=3:1) */
+/* WCAG 1.4.1: current page indicated by shape (3px solid bottom bar) + high-contrast fill */
 .site-menu a[aria-current="page"] {
-  color: #ffffff;
+  background: var(--avis-sapphire);
+  color: var(--avis-white);
   font-weight: 700;
-  background: rgba(19, 134, 170, 0.22);
 }
 
 .site-menu a[aria-current="page"]::after {
   content: "";
   position: absolute;
-  inset-inline: 0.55rem;
-  inset-block-end: 0.15rem;
-  border-block-end: 2.5px solid var(--gold);
+  inset-inline: 0;
+  inset-block-end: 0;
+  border-block-end: 3px solid var(--avis-azure);
 }
 
 .site-header.is-wide .menu-button {
@@ -223,7 +414,7 @@ a {
   position: static;
   display: flex;
   align-items: center;
-  gap: 0.15rem;
+  gap: 2px;
   inline-size: auto;
   max-inline-size: none;
   block-size: auto;
@@ -233,7 +424,6 @@ a {
   padding: 0;
   border: 0;
   background: transparent;
-  box-shadow: none;
 }
 
 .site-header.is-wide .site-menu::backdrop {
@@ -241,313 +431,570 @@ a {
 }
 
 /* ==========================================================================
-   Dark Cinematic Hero
+   7. Architectural Color-Block Hero + Inline Featured Video
+   Follows layout-06-media-frame-studio.html & Brand V2 contrast rules:
+     - Solid primary block (Azure #0080FB or Sapphire #1B346B), NO gradients
+     - Official sub-brand SVG logo on approved primary background
+     - Display H1 >= 36px in white on primary
+     - Body copy placed in flush Sapphire / Sea White block (10.3:1 contrast)
    ========================================================================== */
-.hero {
-  background:
-    radial-gradient(circle at 82% 18%, rgba(19, 134, 170, 0.26), transparent 46%),
-    radial-gradient(circle at 18% 85%, rgba(217, 167, 74, 0.14), transparent 45%),
-    linear-gradient(165deg, #0b1319 0%, #0e1a22 58%, #0c0e0c 100%);
-  color: var(--text-on-dark);
-  padding-block: clamp(3rem, 6vw, 5rem);
-  border-block-end: 1px solid var(--border-dark);
+.hero-shell {
+  border-block-end: 1px solid var(--avis-black);
 }
 
-.container {
-  max-inline-size: var(--max-w);
-  margin-inline: auto;
-  padding-inline: 1.25rem;
+.hero-split {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
 }
 
-.kicker {
-  display: inline-flex;
+@media (width < 980px) {
+  .hero-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hero-primary-block {
+  background: var(--brand-primary);
+  color: var(--brand-on-primary);
+  padding: var(--avis-space-7) var(--avis-space-7) var(--avis-space-6);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--avis-space-5);
+}
+
+@media (width < 640px) {
+  .hero-primary-block {
+    padding: var(--avis-space-6) var(--avis-space-4);
+  }
+}
+
+.hero-brand-row {
+  display: flex;
   align-items: center;
-  gap: 0.55rem;
-  font-family: var(--font-mono);
-  font-size: 0.74rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--avis-space-4);
+}
+
+/* Official sub-brand with-name SVG logo >= 32px height */
+.hero-brand-logo {
+  block-size: 38px;
+  inline-size: auto;
+  display: block;
+}
+
+.hero-kicker {
+  font-family: var(--avis-font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--gold);
-  margin-block-end: 0.9rem;
+  padding: 6px 10px;
+  background: var(--avis-sapphire);
+  color: var(--avis-sea-white);
 }
 
-.hero h1 {
-  margin: 0 0 1rem;
-  font-size: clamp(2rem, 4.4vw, 3.35rem);
-  line-height: 1.12;
-  letter-spacing: -0.025em;
-  max-inline-size: 24ch;
+[data-avis-brand="gateway"] .hero-kicker {
+  background: var(--avis-azure);
+  color: var(--avis-white);
+  font-size: 14px;
 }
 
-.hero h1 .accent-gold {
-  color: var(--gold);
+.hero-primary-block h1 {
+  margin: 0;
+  font-family: var(--avis-font-display);
+  font-weight: 700;
+  font-size: clamp(36px, 4.4vw, 60px);
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+  color: var(--avis-white);
 }
 
-.hero h1 .accent-azure {
-  color: var(--azure-light);
+.hero-sub-block {
+  background: var(--brand-hero-sub-bg);
+  color: var(--brand-hero-sub-fg);
+  padding: var(--avis-space-5) var(--avis-space-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--avis-space-4);
+  border-block-start: 1px solid var(--avis-black);
 }
 
-.hero-sub {
-  font-size: clamp(1rem, 1.4vw, 1.16rem);
-  color: #c5d6e0;
-  max-inline-size: 72ch;
-  margin: 0 0 1.75rem;
+@media (width < 640px) {
+  .hero-sub-block {
+    padding: var(--avis-space-5) var(--avis-space-4);
+  }
+}
+
+.hero-sub-block p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.6;
+  max-inline-size: 68ch;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-block-end: 2.25rem;
+  gap: var(--avis-space-3);
 }
 
+/* Official Brand V2 Buttons: bold >= 19px on Azure/Primary, 0 radius, flat fill */
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.7rem 1.2rem;
-  border-radius: 4px;
-  font-family: inherit;
-  font-size: 0.9rem;
-  font-weight: 600;
+  gap: var(--avis-space-2);
+  padding: 14px 20px;
+  border-radius: var(--avis-radius);
+  font-family: var(--avis-font-sans);
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.1;
   text-decoration: none;
   cursor: pointer;
-  border: 1px solid transparent;
+  border: 0;
 }
 
-.btn-primary {
-  background: var(--gold);
-  color: #11161a;
+.btn-cta-turquoise {
+  background: var(--avis-electric-turquoise);
+  color: var(--avis-sapphire);
 }
 
-.btn-primary:hover {
-  background: #e4b65c;
+.btn-cta-turquoise:hover {
+  background: var(--avis-white);
 }
 
-.btn-secondary {
-  background: rgba(255, 255, 255, 0.06);
-  color: #ffffff;
-  border-color: rgba(157, 220, 228, 0.35);
+.btn-cta-azure {
+  background: var(--avis-azure);
+  color: var(--avis-white);
 }
 
-.btn-secondary:hover {
-  background: rgba(157, 220, 228, 0.14);
+.btn-cta-azure:hover {
+  background: var(--avis-sapphire);
 }
 
-.credential-strip {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 0.85rem;
-  padding-block-start: 1.5rem;
-  border-block-start: 1px solid rgba(157, 220, 228, 0.16);
+.btn-outline-light {
+  background: transparent;
+  color: var(--avis-white);
+  box-shadow: inset 0 0 0 2px var(--avis-sea-white);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 16px;
 }
 
-.cred-stat {
-  background: rgba(19, 27, 34, 0.72);
-  border: 1px solid var(--border-dark);
-  border-radius: 5px;
-  padding: 0.9rem 1rem;
+.btn-outline-light:hover {
+  background: var(--avis-white);
+  color: var(--avis-sapphire);
 }
 
-.cred-stat strong {
-  display: block;
-  font-size: 1.4rem;
-  color: var(--gold);
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+.btn-outline-sapphire {
+  background: var(--avis-white);
+  color: var(--avis-sapphire);
+  box-shadow: inset 0 0 0 2px var(--avis-sapphire);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 16px;
 }
 
-.cred-stat span {
-  display: block;
-  font-size: 0.8rem;
-  color: var(--text-muted-dark);
-  margin-block-start: 0.2rem;
+.btn-outline-sapphire:hover {
+  background: var(--avis-sapphire);
+  color: var(--avis-white);
 }
 
-/* ==========================================================================
-   Sections & Cards
-   ========================================================================== */
-.section {
-  padding-block: clamp(2.75rem, 5vw, 4.25rem);
-  border-block-end: 1px solid var(--border-paper);
-}
-
-.section-dark {
-  background: var(--bg-navy);
-  color: var(--text-on-dark);
-  border-block-end-color: var(--border-dark);
-}
-
-.section-header {
-  margin-block-end: 2rem;
-}
-
-.section-header .eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.73rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--azure);
-  display: block;
-  margin-block-end: 0.45rem;
-}
-
-.section-dark .section-header .eyebrow {
-  color: var(--gold);
-}
-
-.section-header h2 {
-  margin: 0 0 0.6rem;
-  font-size: clamp(1.55rem, 2.8vw, 2.25rem);
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-}
-
-.section-header p {
-  margin: 0;
-  max-inline-size: 72ch;
-  color: var(--ink-secondary);
-}
-
-.section-dark .section-header p {
-  color: var(--text-muted-dark);
-}
-
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.15rem;
-}
-
-.grid-2 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.25rem;
-}
-
-.card {
-  background: var(--surface-paper);
-  border: 1px solid var(--border-paper);
-  border-radius: 6px;
-  padding: 1.35rem;
+/* Right Column: Inline Featured Video Stage */
+.hero-media-stage {
+  background: var(--avis-black);
+  color: var(--avis-sea-white);
+  border-inline-start: 1px solid var(--avis-black);
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
+  justify-content: space-between;
 }
 
-.card-dark {
-  background: var(--surface-dark);
-  border: 1px solid var(--border-dark);
-  color: var(--text-on-dark);
+@media (width < 980px) {
+  .hero-media-stage {
+    border-inline-start: 0;
+    border-block-start: 1px solid var(--avis-black);
+  }
 }
 
-.card-num {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--azure);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.card-dark .card-num {
-  color: var(--gold);
-}
-
-.card h3 {
-  margin: 0;
-  font-size: 1.12rem;
-  line-height: 1.3;
-}
-
-.card p {
-  margin: 0;
-  font-size: 0.92rem;
-  color: var(--ink-secondary);
-}
-
-.card-dark p {
-  color: var(--text-muted-dark);
-}
-
-.pill-row {
+.hero-media-bar {
+  padding: var(--avis-space-3) var(--avis-space-5);
+  background: var(--avis-sapphire);
+  color: var(--avis-sea-white);
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-block-start: auto;
-  padding-block-start: 0.55rem;
-}
-
-.pill {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  padding: 0.2rem 0.5rem;
-  border-radius: 3px;
-  background: var(--azure-tint);
-  color: var(--azure-deep);
-  border: 1px solid rgba(19, 134, 170, 0.22);
-}
-
-.card-dark .pill {
-  background: rgba(157, 220, 228, 0.1);
-  color: var(--azure-light);
-  border-color: rgba(157, 220, 228, 0.24);
-}
-
-/* ==========================================================================
-   OTT & Film Distribution Network Banner
-   ========================================================================== */
-.ott-banner {
-  background: linear-gradient(135deg, #0e1a22 0%, #152b38 100%);
-  color: var(--text-on-dark);
-  border: 1px solid rgba(217, 167, 74, 0.45);
-  border-radius: 8px;
-  padding: clamp(1.5rem, 3vw, 2.25rem);
-  display: grid;
-  grid-template-columns: 1.35fr 1fr;
-  gap: 1.5rem;
   align-items: center;
+  justify-content: space-between;
+  gap: var(--avis-space-3);
+  font-family: var(--avis-font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-block-end: 1px solid var(--avis-black);
 }
 
-@media (width < 820px) {
-  .ott-banner {
+.hero-video-frame {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--avis-black);
+  min-block-size: 320px;
+}
+
+.hero-video-frame video {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  max-block-size: 460px;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: var(--avis-black);
+}
+
+.hero-media-caption {
+  padding: var(--avis-space-3) var(--avis-space-5);
+  background: var(--avis-sea-white);
+  color: var(--avis-sapphire);
+  font-size: 14px;
+  border-block-start: 1px solid var(--avis-sapphire);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--avis-space-3);
+}
+
+.hero-media-caption strong {
+  font-weight: 600;
+}
+
+/* Flush Credential Stat Band (modeled directly on .cap in layout-06-media-frame-studio.html) */
+.credential-band {
+  background: var(--brand-band-bg);
+  color: var(--brand-band-fg);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-block-start: 1px solid var(--avis-sapphire);
+}
+
+@media (width < 920px) {
+  .credential-band {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width < 540px) {
+  .credential-band {
     grid-template-columns: 1fr;
   }
 }
 
-.ott-banner h3 {
-  margin: 0.35rem 0 0.65rem;
-  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
-  color: #ffffff;
+.cred-cell {
+  padding: var(--avis-space-5) var(--avis-space-6);
+  border-inline-start: 1px solid var(--avis-sapphire);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.ott-banner p {
-  margin: 0;
-  color: #c8dae4;
-  font-size: 0.95rem;
+.cred-cell:first-child {
+  border-inline-start: 0;
 }
 
-.ott-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 0.65rem;
+@media (width < 920px) {
+  .cred-cell:nth-child(odd) {
+    border-inline-start: 0;
+  }
+  .cred-cell:nth-child(n + 3) {
+    border-block-start: 1px solid var(--avis-sapphire);
+  }
 }
 
-.ott-list li {
-  background: rgba(255, 255, 255, 0.05);
-  border-inline-start: 3px solid var(--gold);
-  padding: 0.65rem 0.85rem;
-  border-radius: 0 4px 4px 0;
-  font-size: 0.86rem;
-  color: #e6eff4;
+@media (width < 540px) {
+  .cred-cell {
+    border-inline-start: 0;
+    border-block-start: 1px solid var(--avis-sapphire);
+  }
+  .cred-cell:first-child {
+    border-block-start: 0;
+  }
+}
+
+.cred-cell .mono-label {
+  font-family: var(--avis-font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cred-cell strong {
+  font-family: var(--avis-font-display);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.05;
+}
+
+.cred-cell span {
+  font-size: 14px;
+  line-height: 1.45;
 }
 
 /* ==========================================================================
-   Tabbed Pipeline Explorer (modern-web-guidance: tabs)
+   8. Sections, Sheet Labels & Solid Architectural Cards
+   ========================================================================== */
+.section {
+  padding-block: var(--avis-space-8);
+  border-block-end: 1px solid var(--avis-sea-white);
+}
+
+.section-alt {
+  background: var(--brand-surface-alt);
+}
+
+.section-sapphire {
+  background: var(--avis-sapphire);
+  color: var(--avis-sea-white);
+  border-block-end-color: var(--avis-black);
+}
+
+/* Official V2 Section Label: IBM Plex Sans 400 caps + 1px bottom rule */
+.section-label {
+  font-family: var(--avis-font-sans);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--avis-black);
+  padding-block-end: var(--avis-space-3);
+  border-block-end: 1px solid var(--avis-black);
+  margin-block-end: var(--avis-space-5);
+  display: flex;
+  align-items: center;
+}
+
+.section-sapphire .section-label {
+  color: var(--avis-white);
+  border-block-end-color: var(--avis-sea-white);
+}
+
+.section-header {
+  margin-block-end: var(--avis-space-6);
+}
+
+.section-header h2 {
+  margin: 0 0 var(--avis-space-3);
+  font-family: var(--avis-font-display);
+  font-weight: 700;
+  font-size: clamp(30px, 3.6vw, 44px);
+  line-height: 1.08;
+  color: var(--avis-sapphire);
+}
+
+.section-sapphire .section-header h2 {
+  color: var(--avis-white);
+}
+
+.section-header p {
+  margin: 0;
+  max-inline-size: 74ch;
+  font-size: 17px;
+  color: var(--avis-sapphire);
+}
+
+.section-sapphire .section-header p {
+  color: var(--avis-sea-white);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: var(--avis-space-5);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: var(--avis-space-5);
+}
+
+.card {
+  background: var(--avis-white);
+  border: 1px solid var(--avis-sapphire);
+  border-radius: var(--avis-radius);
+  padding: var(--avis-space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--avis-space-3);
+}
+
+.card-tag {
+  display: inline-block;
+  align-self: flex-start;
+  font-family: var(--avis-font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 8px;
+  background: var(--brand-surface-alt);
+  color: var(--avis-sapphire);
+}
+
+.card h3 {
+  margin: 0;
+  font-family: var(--avis-font-sans);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.3;
+  color: var(--avis-sapphire);
+}
+
+.card p {
+  margin: 0;
+  font-size: 16px;
+  color: var(--avis-sapphire);
+}
+
+.card-footer {
+  margin-block-start: auto;
+  padding-block-start: var(--avis-space-3);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--avis-space-2);
+}
+
+/* Official V2 Triangle List Bullets (avis-design-system.html ul.rules) */
+.avis-list {
+  list-style: none;
+  margin: var(--avis-space-3) 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.avis-list li {
+  position: relative;
+  padding-inline-start: 24px;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.avis-list li::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: 0.52em;
+  inline-size: 12px;
+  aspect-ratio: var(--brand-tri-ratio);
+  background: var(--brand-marker-color);
+  -webkit-mask: var(--brand-tri-mask) center / contain no-repeat;
+  mask: var(--brand-tri-mask) center / contain no-repeat;
+}
+
+[data-avis-brand="creative-studio"] .avis-list li::before {
+  inline-size: 8px;
+  inset-block-start: 0.35em;
+}
+
+/* ==========================================================================
+   9. Inline Direct Video Embed Grid (AVIS Academy R2 Pattern + modern-web-guidance: lazy-load-video-and-audio)
+   ========================================================================== */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--avis-space-5);
+}
+
+@media (width < 860px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.video-figure {
+  margin: 0;
+  background: var(--avis-white);
+  color: var(--avis-sapphire);
+  border: 1px solid var(--avis-black);
+  border-radius: var(--avis-radius);
+  display: flex;
+  flex-direction: column;
+}
+
+.video-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--avis-space-3);
+  padding: 10px 16px;
+  background: var(--avis-sea-white);
+  color: var(--avis-sapphire);
+  border-block-end: 1px solid var(--avis-sapphire);
+}
+
+.video-head-tag {
+  font-family: var(--avis-font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.video-head-ratio {
+  font-family: var(--avis-font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 6px;
+  background: var(--avis-sapphire);
+  color: var(--avis-white);
+}
+
+.video-stage {
+  background: var(--avis-black);
+  inline-size: 100%;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.video-stage video {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: contain;
+  background: var(--avis-black);
+}
+
+.video-caption {
+  padding: var(--avis-space-4) var(--avis-space-5);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-block-start: 1px solid var(--avis-sapphire);
+  flex: 1;
+}
+
+.video-caption h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--avis-sapphire);
+}
+
+.video-caption p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--avis-sapphire);
+}
+
+/* ==========================================================================
+   10. Tabbed Pipeline Explorer (modern-web-guidance: tabs)
    ========================================================================== */
 @property --fade-start {
   syntax: "<length>";
@@ -583,8 +1030,8 @@ a {
   overflow-x: auto;
   scroll-snap-type: inline proximity;
   scroll-padding-inline: 2.5rem;
-  border-block-end: 1px solid var(--border-paper);
-  gap: 0.25rem;
+  border-block-end: 2px solid var(--avis-sapphire);
+  gap: 4px;
   scrollbar-width: none;
   --fade-size: 2.5rem;
   --fade-dir: right;
@@ -612,260 +1059,200 @@ a {
   --fade-end: var(--fade-size);
 }
 
-.tablist-scroller [role="tab"],
-.tablist-scroller button {
+/* Dimension-invariant tab styling (tabs guide: never change font-weight/padding/border on selection) */
+.tablist-scroller [role="tab"] {
   flex: none;
   scroll-snap-align: start;
   position: relative;
   appearance: none;
   border: 0;
-  background: transparent;
-  padding: 0.8rem 1.05rem;
-  font: inherit;
-  font-size: 0.9rem;
+  background: var(--avis-white);
+  padding: 14px 18px;
+  font-family: var(--avis-font-mono);
+  font-size: 13px;
   font-weight: 600;
-  color: var(--ink-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--avis-sapphire);
   cursor: pointer;
 }
 
 .tablist-scroller [aria-selected="true"] {
-  color: var(--azure-deep);
+  background: var(--avis-sapphire);
+  color: var(--avis-white);
 }
 
-/* WCAG 1.4.1: border underline on pseudo-element so forced-colors preserves it */
+/* WCAG 1.4.1 + Forced Colors safe border underline on pseudo-element */
 .tablist-scroller [aria-selected="true"]::after {
   content: "";
   position: absolute;
   inset: auto 0 0;
-  border-block-end: 3px solid var(--azure);
+  border-block-end: 4px solid var(--avis-azure);
 }
 
 .tabpanels-stack {
   display: grid;
 }
 
-/* Place all panels in same grid cell and keep box styles on child wrapper so hidden="until-found" leaves zero empty strip */
+/* Same grid cell + zero box styling on panel itself so hidden="until-found" renders zero empty strip */
 .tabpanels-stack > [role="tabpanel"] {
   grid-area: 1 / 1;
 }
 
 .tabpanel-card {
-  margin-block-start: 1.15rem;
-  background: var(--surface-paper);
-  border: 1px solid var(--border-paper);
-  border-radius: 6px;
-  padding: 1.5rem;
+  background: var(--avis-white);
+  border: 1px solid var(--avis-sapphire);
+  border-block-start: 0;
+  padding: var(--avis-space-6);
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 1.5rem;
+  grid-template-columns: 1.35fr 0.85fr;
+  gap: var(--avis-space-6);
 }
 
-@media (width < 760px) {
+@media (width < 800px) {
   .tabpanel-card {
     grid-template-columns: 1fr;
+    padding: var(--avis-space-5);
   }
 }
 
 .tabpanel-card h3 {
-  margin: 0 0 0.5rem;
-  font-size: 1.2rem;
+  margin: 0 0 var(--avis-space-2);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--avis-sapphire);
 }
 
-.tabpanel-card ul {
-  margin: 0.65rem 0 0;
-  padding-inline-start: 1.2rem;
-  display: grid;
-  gap: 0.4rem;
-  color: var(--ink-secondary);
-  font-size: 0.92rem;
+.tabpanel-card p {
+  margin: 0;
+  color: var(--avis-sapphire);
 }
 
 .tabpanel-meta {
-  background: #f8fafb;
-  border: 1px solid var(--border-paper);
-  border-radius: 5px;
-  padding: 1.1rem;
-  font-size: 0.88rem;
+  background: var(--brand-surface-soft);
+  border: 1px solid var(--avis-sapphire);
+  padding: var(--avis-space-5);
+  align-self: start;
 }
 
 .tabpanel-meta strong {
   display: block;
-  color: var(--azure-deep);
-  font-family: var(--font-mono);
-  font-size: 0.74rem;
+  font-family: var(--avis-font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-block-end: 0.4rem;
+  color: var(--avis-sapphire);
+  padding-block-end: 8px;
+  border-block-end: 1px solid var(--avis-sapphire);
+  margin-block-end: 10px;
 }
 
 /* ==========================================================================
-   Video Showcase Cards & Light-Dismiss Dialog (modern-web-guidance)
+   11. OTT & Film Distribution Network Solid Block (Flat Sapphire, Zero Gradients)
    ========================================================================== */
-.demo-grid {
+.ott-panel {
+  background: var(--avis-sapphire);
+  color: var(--avis-sea-white);
+  border: 2px solid var(--avis-black);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
-  gap: 1.15rem;
+  grid-template-columns: 1.25fr 1fr;
 }
 
-.demo-card {
-  background: var(--surface-dark);
-  border: 1px solid var(--border-dark);
-  border-radius: 5px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+@media (width < 880px) {
+  .ott-panel {
+    grid-template-columns: 1fr;
+  }
 }
 
-.demo-thumb {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  background: #070b0f;
-  overflow: hidden;
+.ott-main {
+  padding: var(--avis-space-6);
 }
 
-.demo-thumb img {
-  inline-size: 100%;
-  block-size: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.demo-play-btn {
-  position: absolute;
-  inset: 0;
-  inline-size: 100%;
-  block-size: 100%;
-  border: 0;
-  background: linear-gradient(to top, rgba(7, 11, 15, 0.82), rgba(7, 11, 15, 0.18));
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font: inherit;
-}
-
-.play-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.5rem 0.9rem;
-  border-radius: 3px;
-  background: rgba(12, 14, 12, 0.88);
-  border: 1px solid var(--gold);
-  color: var(--gold);
-  font-family: var(--font-mono);
-  font-size: 0.76rem;
+.ott-eyebrow {
+  font-family: var(--avis-font-mono);
+  font-size: 12px;
   font-weight: 600;
-}
-
-.demo-body {
-  padding: 1rem 1.1rem 1.15rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-
-.demo-tag {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--gold);
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.demo-body h3 {
-  margin: 0;
-  font-size: 1.02rem;
-  color: #ffffff;
-}
-
-.demo-body p {
-  margin: 0;
-  font-size: 0.85rem;
-  color: var(--text-muted-dark);
-}
-
-dialog.video-dialog {
-  max-inline-size: min(960px, 94dvw);
-  inline-size: 100%;
-  padding: 0;
-  border: 1px solid var(--border-dark);
-  border-radius: 8px;
-  background: #0b1116;
-  color: #ffffff;
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.65);
-}
-
-dialog.video-dialog::backdrop {
-  background-color: rgba(5, 10, 14, 0.82);
-  backdrop-filter: blur(6px);
-}
-
-.dialog-inner {
-  padding: 1rem 1.15rem 1.2rem;
-}
-
-.dialog-bar {
+  color: var(--brand-dark-accent);
+  margin-block-end: var(--avis-space-3);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-block-end: 0.75rem;
 }
 
-.dialog-bar h2 {
+.ott-main h3 {
+  margin: 0 0 var(--avis-space-3);
+  font-family: var(--avis-font-display);
+  font-weight: 700;
+  font-size: clamp(26px, 3vw, 36px);
+  line-height: 1.1;
+  color: var(--avis-white);
+}
+
+.ott-main p {
   margin: 0;
-  font-size: 1.05rem;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--avis-sea-white);
 }
 
-.dialog-close-btn {
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  border: 1px solid var(--border-dark);
-  background: var(--surface-elevated);
-  color: #ffffff;
-  font: inherit;
-  font-size: 0.82rem;
-  font-weight: 600;
-  cursor: pointer;
+.ott-list {
+  margin: 0;
+  padding: var(--avis-space-6);
+  list-style: none;
+  background: var(--avis-sea-white);
+  color: var(--avis-sapphire);
+  border-inline-start: 2px solid var(--avis-black);
+  display: grid;
+  gap: var(--avis-space-4);
+  align-content: center;
 }
 
-.dialog-video {
-  inline-size: 100%;
-  aspect-ratio: 16 / 9;
-  background: #000000;
-  border-radius: 4px;
-  display: block;
+@media (width < 880px) {
+  .ott-list {
+    border-inline-start: 0;
+    border-block-start: 2px solid var(--avis-black);
+  }
+}
+
+.ott-list li {
+  padding-inline-start: 16px;
+  border-inline-start: 4px solid var(--avis-azure);
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 /* ==========================================================================
-   Responsive Benchmark Table (modern-web-guidance: responsive-table)
+   12. Responsive Benchmark Table (modern-web-guidance: responsive-table)
    ========================================================================== */
 .table-wrapper {
   overflow: auto;
   max-inline-size: 100%;
-  max-block-size: min(560px, 80dvh);
+  max-block-size: min(580px, 80dvh);
   container-type: inline-size;
-  border: 1px solid var(--border-paper);
-  border-radius: 6px;
-  background: var(--surface-paper);
+  border: 1px solid var(--avis-sapphire);
+  background: var(--avis-white);
 }
 
 .benchmark-table {
   inline-size: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  font-size: 0.9rem;
+  font-size: 15px;
 }
 
 .benchmark-table caption {
   text-align: start;
-  padding: 0.9rem 1.1rem;
+  padding: 14px 18px;
+  font-family: var(--avis-font-mono);
+  font-size: 13px;
   font-weight: 700;
-  color: var(--ink);
-  background: #f8fafb;
-  border-block-end: 1px solid var(--border-paper);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--avis-sapphire);
+  background: var(--avis-sea-white);
+  border-block-end: 1px solid var(--avis-sapphire);
 }
 
 .benchmark-table thead {
@@ -875,33 +1262,37 @@ dialog.video-dialog::backdrop {
 }
 
 .benchmark-table thead th {
-  background: #eef3f6;
-  color: var(--ink);
-  font-weight: 700;
+  background: var(--avis-sapphire);
+  color: var(--avis-white);
+  font-family: var(--avis-font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   text-align: start;
-  padding: 0.8rem 1rem;
-  border-block-end: 1px solid var(--border-strong);
+  padding: 12px 16px;
+  border-block-end: 1px solid var(--avis-black);
   white-space: nowrap;
 }
 
 .benchmark-table tbody th,
 .benchmark-table tbody td {
-  padding: 0.85rem 1rem;
-  border-block-end: 1px solid var(--border-paper);
+  padding: 14px 16px;
+  border-block-end: 1px solid var(--avis-sea-white);
   vertical-align: top;
+  color: var(--avis-sapphire);
 }
 
 .benchmark-table tbody th {
   position: sticky;
   inset-inline-start: 0;
   z-index: 1;
-  background: #ffffff;
+  background: var(--avis-white);
   text-align: start;
   font-weight: 600;
-  color: var(--ink);
 }
 
-@container (width < 600px) {
+@container (width < 620px) {
   .benchmark-table,
   .benchmark-table thead,
   .benchmark-table tbody,
@@ -916,124 +1307,135 @@ dialog.video-dialog::backdrop {
   }
 
   .benchmark-table tr {
-    margin: 0.75rem;
-    border: 1px solid var(--border-paper);
-    border-radius: 5px;
-    overflow: hidden;
+    margin: 12px;
+    border: 1px solid var(--avis-sapphire);
   }
 
   .benchmark-table tbody th {
     position: sticky;
     inset-block-start: 0;
     z-index: 2;
-    background: #eef3f6;
+    background: var(--avis-sea-white);
+    border-block-end: 1px solid var(--avis-sapphire);
   }
 
   .benchmark-table td:nth-child(2)::before {
     content: var(--label-2) ": ";
     font-weight: 700;
-    color: var(--ink-secondary);
   }
 
   .benchmark-table td:nth-child(3)::before {
     content: var(--label-3) ": ";
     font-weight: 700;
-    color: var(--azure-deep);
   }
 
   .benchmark-table td:nth-child(4)::before {
     content: var(--label-4) ": ";
     font-weight: 700;
-    color: var(--gold-deep);
   }
 }
 
 /* ==========================================================================
-   Roadmap Steps & Segment Directory Cards
+   13. PoC Steps & Footer (Official -white cutout SVG logo on pure #000000 Black)
    ========================================================================== */
 .steps-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0;
+  border: 1px solid var(--avis-sapphire);
 }
 
 .step-box {
-  background: var(--surface-paper);
-  border: 1px solid var(--border-paper);
-  border-inline-start: 4px solid var(--azure);
-  border-radius: 5px;
-  padding: 1.15rem;
+  background: var(--avis-white);
+  padding: var(--avis-space-5);
+  border-inline-start: 1px solid var(--avis-sapphire);
+  border-block-start: 4px solid var(--brand-primary);
 }
 
-.step-box .step-week {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
+.step-box:first-child {
+  border-inline-start: 0;
+}
+
+.step-week {
+  font-family: var(--avis-font-mono);
+  font-size: 12px;
   font-weight: 700;
-  color: var(--azure-deep);
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  color: var(--avis-sapphire);
 }
 
 .step-box h3 {
-  margin: 0.3rem 0 0.45rem;
-  font-size: 1.02rem;
+  margin: 8px 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--avis-sapphire);
 }
 
 .step-box p {
   margin: 0;
-  font-size: 0.88rem;
-  color: var(--ink-secondary);
+  font-size: 15px;
+  color: var(--avis-sapphire);
 }
 
-.proposal-link-card {
-  text-decoration: none;
-  transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
-}
-
-.proposal-link-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--azure);
-  box-shadow: 0 10px 26px rgba(19, 134, 170, 0.12);
-}
-
-.card-cta {
-  margin-block-start: auto;
-  padding-block-start: 0.75rem;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--azure-deep);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-}
-
-/* ==========================================================================
-   Footer & Print Stylesheet
-   ========================================================================== */
 .site-footer {
-  background: #0b1319;
-  color: var(--text-muted-dark);
-  padding-block: 2.5rem;
-  font-size: 0.85rem;
+  background: var(--avis-black);
+  color: var(--avis-sea-white);
+  padding-block: var(--avis-space-7);
+  border-block-start: 1px solid var(--avis-black);
+  font-size: 14px;
 }
 
 .footer-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 1.5rem;
-  align-items: center;
+  gap: var(--avis-space-6);
+  align-items: flex-start;
+}
+
+.footer-logo {
+  block-size: 32px;
+  inline-size: auto;
+  display: block;
+  margin-block-end: var(--avis-space-3);
 }
 
 .footer-grid strong {
-  color: #ffffff;
+  color: var(--avis-white);
+}
+
+.footer-links {
+  font-family: var(--avis-font-mono);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* ==========================================================================
+   14. Forced Colors Mode & Print Stylesheet (modern-web-guidance: color)
+   ========================================================================== */
+@media (forced-colors: active) {
+  .btn,
+  .card,
+  .video-figure,
+  .ott-panel,
+  .tabpanel-card,
+  .site-menu {
+    border: 1px solid ButtonText;
+  }
+
+  .site-menu a[aria-current="page"],
+  .tablist-scroller [aria-selected="true"] {
+    outline: 2px solid Highlight;
+    outline-offset: -2px;
+  }
 }
 
 @media print {
   .site-header,
   .hero-actions,
-  .demo-play-btn .play-pill,
-  dialog {
+  .hero-media-stage,
+  .video-stage {
     display: none !important;
   }
 
@@ -1042,21 +1444,24 @@ dialog.video-dialog::backdrop {
     color: #000000;
   }
 
-  .hero,
-  .section-dark,
-  .ott-banner {
-    background: #ffffff !important;
-    color: #000000 !important;
-    border: 1px solid #999999 !important;
+  .hero-split {
+    grid-template-columns: 1fr;
   }
 
-  .hero h1,
-  .hero-sub,
-  .cred-stat strong,
-  .cred-stat span,
-  .ott-banner h3,
-  .ott-banner p,
-  .ott-list li {
+  .hero-primary-block,
+  .hero-sub-block,
+  .credential-band,
+  .section-sapphire,
+  .ott-panel,
+  .site-footer {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #000000 !important;
+  }
+
+  .hero-primary-block h1,
+  .ott-main h3,
+  .ott-main p {
     color: #000000 !important;
   }
 

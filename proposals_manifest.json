@@ -1,61 +1,110 @@
 [
   {
     "slug": "indie-cinema-ott",
+    "brand": "creative-studio",
     "title": "Đơn vị Sản xuất Phim Độc lập, Điện ảnh & Series OTT",
     "category_ids": [
       "indie-film-cinema-producers"
     ],
     "relative_path": "/proposals/indie-cinema-ott",
-    "html_path": "/proposals/indie-cinema-ott.html"
+    "html_path": "/proposals/indie-cinema-ott.html",
+    "hero_video_url": "/media/videos/video-233-film.mp4",
+    "embedded_videos": [
+      "/media/videos/dragon-previs-vcam.mp4",
+      "/media/videos/previs-phone.mp4",
+      "/media/videos/avis-performance.mp4",
+      "/media/videos/remake-dragon-queen.mp4"
+    ]
   },
   {
     "slug": "production-house-tvc",
+    "brand": "creative-studio",
     "title": "Production House Sản xuất TVC, MV & Phim Thương mại",
     "category_ids": [
       "tvc-commercial-production-houses"
     ],
     "relative_path": "/proposals/production-house-tvc",
-    "html_path": "/proposals/production-house-tvc.html"
+    "html_path": "/proposals/production-house-tvc.html",
+    "hero_video_url": "/media/videos/trungchi-milo.mp4",
+    "embedded_videos": [
+      "/media/videos/tvc-cau-di-bo.mp4",
+      "/media/videos/others-apero-demo.mp4",
+      "/media/videos/apolink.mp4",
+      "/media/videos/previs-render.mp4"
+    ]
   },
   {
     "slug": "vfx-cgi-animation",
+    "brand": "creative-studio",
     "title": "Studio Kỹ xảo Điện ảnh (VFX), CGI, 3D & Hoạt hình IP",
     "category_ids": [
       "vfx-cgi-3d-animation-studios"
     ],
     "relative_path": "/proposals/vfx-cgi-animation",
-    "html_path": "/proposals/vfx-cgi-animation.html"
+    "html_path": "/proposals/vfx-cgi-animation.html",
+    "hero_video_url": "/media/videos/vfx-motion.mp4",
+    "embedded_videos": [
+      "/media/videos/apolink-vfx-excerpt.mp4",
+      "/media/videos/post-charsync.mp4",
+      "/media/videos/animation-style.mp4",
+      "/media/videos/previs-blockout.mp4"
+    ]
   },
   {
     "slug": "short-drama-remake",
+    "brand": "creative-studio",
     "title": "Nhà Sản xuất Short Drama, Web Drama, MCN & Remake Quốc tế",
     "category_ids": [
       "ecommerce-social-commerce-tech",
       "short-drama-producers"
     ],
     "relative_path": "/proposals/short-drama-remake",
-    "html_path": "/proposals/short-drama-remake.html"
+    "html_path": "/proposals/short-drama-remake.html",
+    "hero_video_url": "/media/videos/remake-western-cast.mp4",
+    "embedded_videos": [
+      "/media/videos/drift-ep01.mp4",
+      "/media/videos/mermaid-ep01.mp4",
+      "/media/videos/remake-good-girl.mp4",
+      "/media/videos/remake-compare-prob4.mp4"
+    ]
   },
   {
     "slug": "archviz-interior-design",
+    "brand": "creative-studio",
     "title": "Studio Diễn họa Kiến trúc (Archviz), Phim 3D BĐS & Thiết kế Nội thất",
     "category_ids": [
       "archviz-interior-design-firms"
     ],
     "relative_path": "/proposals/archviz-interior-design",
-    "html_path": "/proposals/archviz-interior-design.html"
+    "html_path": "/proposals/archviz-interior-design.html",
+    "hero_video_url": "/media/videos/tvc-cau-di-bo.mp4",
+    "embedded_videos": [
+      "/media/videos/previs-blockout.mp4",
+      "/media/videos/previs-render.mp4",
+      "/media/videos/mermaid-ep01.mp4",
+      "/media/videos/remake-good-girl.mp4"
+    ]
   },
   {
     "slug": "creative-digital-agency",
+    "brand": "creative-studio",
     "title": "Creative Agency, Branding, Social & Performance Marketing Agency",
     "category_ids": [
       "creative-advertising-digital-agencies"
     ],
     "relative_path": "/proposals/creative-digital-agency",
-    "html_path": "/proposals/creative-digital-agency.html"
+    "html_path": "/proposals/creative-digital-agency.html",
+    "hero_video_url": "/media/videos/trungchi-milo.mp4",
+    "embedded_videos": [
+      "/media/videos/others-apero-demo.mp4",
+      "/media/videos/others-ep01.mp4",
+      "/media/videos/drift-ep01.mp4",
+      "/media/videos/remake-western-cast.mp4"
+    ]
   },
   {
     "slug": "ai-saas-enterprise-gateway",
+    "brand": "gateway",
     "title": "Startup AI/SaaS, Doanh nghiệp Chuyển đổi số, App Publisher & SI (AVIS Gateway)",
     "category_ids": [
       "ai-saas-startups-vn",
@@ -65,16 +114,31 @@
       "software-outsourcing-ai-integrators"
     ],
     "relative_path": "/proposals/ai-saas-enterprise-gateway",
-    "html_path": "/proposals/ai-saas-enterprise-gateway.html"
+    "html_path": "/proposals/ai-saas-enterprise-gateway.html",
+    "hero_video_url": "/media/videos/apolink.mp4",
+    "embedded_videos": [
+      "/media/videos/sound-demo.mp4",
+      "/media/videos/others-apero-demo.mp4",
+      "/media/videos/vfx-motion.mp4",
+      "/media/videos/post-charsync.mp4"
+    ]
   },
   {
     "slug": "creative-campus-academy",
+    "brand": "masterbrand",
     "title": "Trường Đại học, Cao đẳng & Học viện Đào tạo Sáng tạo (AVIS Creative Campus)",
     "category_ids": [
       "universities-colleges-creative-it",
       "short-term-creative-ai-academies"
     ],
     "relative_path": "/proposals/creative-campus-academy",
-    "html_path": "/proposals/creative-campus-academy.html"
+    "html_path": "/proposals/creative-campus-academy.html",
+    "hero_video_url": "/media/videos/dragon-previs-vcam.mp4",
+    "embedded_videos": [
+      "/media/videos/previs-phone.mp4",
+      "/media/videos/video-233-film.mp4",
+      "/media/videos/animation-style.mp4",
+      "/media/videos/drift-ep01.mp4"
+    ]
   }
 ]
