@@ -1,6 +1,7 @@
 # AVIS Executive Proposals (`avis-proposals`)
 
 - **Live Production Portal (Vercel)**: https://avis-proposals.vercel.app
+- **Liên hệ Hợp tác**: `anhlhd@avis.net` · `0917769263` (Zalo, Tele)
 - **Bảng Request Video Demo Usecase (20 Usecases)**: https://avis-proposals.vercel.app/video-requests ([`VIDEO_DEMO_REQUESTS.md`](VIDEO_DEMO_REQUESTS.md))
 - **Public GitHub Repository**: https://github.com/0xAstroAlpha/avis-proposals
 

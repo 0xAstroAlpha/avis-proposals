@@ -8,12 +8,11 @@
     ],
     "relative_path": "/proposals/indie-cinema-ott",
     "html_path": "/proposals/indie-cinema-ott.html",
-    "hero_mode": "video",
-    "hero_video_url": "/media/videos/dragon-previs-vcam.mp4",
+    "has_code_stage": false,
     "embedded_videos": [
+      "/media/videos/dragon-previs-vcam.mp4",
       "/media/videos/vfx-motion.mp4",
       "/media/videos/post-charsync.mp4",
-      "/media/videos/apolink.mp4",
       "/media/videos/sound-demo.mp4"
     ]
   },
@@ -26,9 +25,9 @@
     ],
     "relative_path": "/proposals/production-house-tvc",
     "html_path": "/proposals/production-house-tvc.html",
-    "hero_mode": "video",
-    "hero_video_url": "/media/videos/trungchi-milo.mp4",
+    "has_code_stage": false,
     "embedded_videos": [
+      "/media/videos/trungchi-milo.mp4",
       "/media/videos/tvc-cau-di-bo.mp4",
       "/media/videos/previs-phone.mp4",
       "/media/videos/previs-render.mp4"
@@ -43,13 +42,12 @@
     ],
     "relative_path": "/proposals/vfx-cgi-animation",
     "html_path": "/proposals/vfx-cgi-animation.html",
-    "hero_mode": "video",
-    "hero_video_url": "/media/videos/vfx-motion.mp4",
+    "has_code_stage": false,
     "embedded_videos": [
+      "/media/videos/vfx-motion.mp4",
       "/media/videos/apolink-vfx-excerpt.mp4",
       "/media/videos/post-charsync.mp4",
-      "/media/videos/animation-style.mp4",
-      "/media/videos/remake-dragon-queen.mp4"
+      "/media/videos/animation-style.mp4"
     ]
   },
   {
@@ -62,9 +60,9 @@
     ],
     "relative_path": "/proposals/short-drama-remake",
     "html_path": "/proposals/short-drama-remake.html",
-    "hero_mode": "video",
-    "hero_video_url": "/media/videos/remake-western-cast.mp4",
+    "has_code_stage": false,
     "embedded_videos": [
+      "/media/videos/remake-western-cast.mp4",
       "/media/videos/drift-ep01.mp4",
       "/media/videos/mermaid-ep01.mp4",
       "/media/videos/remake-dragon-queen.mp4"
@@ -79,9 +77,10 @@
     ],
     "relative_path": "/proposals/archviz-interior-design",
     "html_path": "/proposals/archviz-interior-design.html",
-    "hero_mode": "video",
-    "hero_video_url": "/media/videos/tvc-cau-di-bo.mp4",
-    "embedded_videos": []
+    "has_code_stage": false,
+    "embedded_videos": [
+      "/media/videos/tvc-cau-di-bo.mp4"
+    ]
   },
   {
     "slug": "creative-digital-agency",
@@ -92,9 +91,9 @@
     ],
     "relative_path": "/proposals/creative-digital-agency",
     "html_path": "/proposals/creative-digital-agency.html",
-    "hero_mode": "video",
-    "hero_video_url": "/media/videos/trungchi-milo.mp4",
+    "has_code_stage": false,
     "embedded_videos": [
+      "/media/videos/trungchi-milo.mp4",
       "/media/videos/tvc-cau-di-bo.mp4",
       "/media/videos/video-233-film.mp4",
       "/media/videos/drift-ep01.mp4"
@@ -113,8 +112,7 @@
     ],
     "relative_path": "/proposals/ai-saas-enterprise-gateway",
     "html_path": "/proposals/ai-saas-enterprise-gateway.html",
-    "hero_mode": "code",
-    "hero_video_url": null,
+    "has_code_stage": true,
     "embedded_videos": []
   },
   {
@@ -127,9 +125,9 @@
     ],
     "relative_path": "/proposals/creative-campus-academy",
     "html_path": "/proposals/creative-campus-academy.html",
-    "hero_mode": "video",
-    "hero_video_url": "/media/videos/dragon-previs-vcam.mp4",
+    "has_code_stage": false,
     "embedded_videos": [
+      "/media/videos/dragon-previs-vcam.mp4",
       "/media/videos/previs-blockout.mp4",
       "/media/videos/animation-style.mp4",
       "/media/videos/video-233-film.mp4"

@@ -450,55 +450,53 @@ a {
 }
 
 /* ==========================================================================
-   7. Architectural Color-Block Hero + Inline Featured Video / Code Stage
-   Follows layout-06-media-frame-studio.html & Brand V2 contrast rules:
+   7. Container-Aligned Single-Column Hero (AVIS Brand V2)
+   Matches exact --max-w (80rem) container alignment of all sections below:
+     - Single-column architectural frame (no wide 2-column edge-to-edge split)
      - Solid primary block (Azure #0080FB or Sapphire #1B346B), NO gradients
-     - Official sub-brand SVG logo on approved primary background
-     - Display H1 >= 36px (2.25rem) in white on primary, max <= 2.5x min
-     - Body copy placed in flush Sapphire / Sea White block (10.3:1 contrast)
+     - Flush subtitle + CTA bar + 4-cell credential band in the same frame
    ========================================================================== */
 .hero-shell {
+  padding-block: var(--avis-space-6);
+  background: var(--avis-sea-white);
   border-block-end: 1px solid var(--avis-black);
 }
 
-.hero-split {
-  display: grid;
-  grid-template-columns: 1.08fr 0.92fr;
-}
-
-@media (width < 61.25rem) {
-  .hero-split {
-    grid-template-columns: 1fr;
-  }
+.hero-frame {
+  border: 1px solid var(--avis-black);
+  background: var(--avis-white);
 }
 
 .hero-primary-block {
   background: var(--brand-primary);
   color: var(--brand-on-primary);
-  padding: var(--avis-space-7) var(--avis-space-7) var(--avis-space-6);
+  padding: var(--avis-space-6) var(--avis-space-7);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: var(--avis-space-5);
+  gap: var(--avis-space-4);
 }
 
 @media (width < 40rem) {
+  .hero-shell {
+    padding-block: var(--avis-space-4);
+  }
+
   .hero-primary-block {
-    padding: var(--avis-space-6) var(--avis-space-4);
+    padding: var(--avis-space-5) var(--avis-space-4);
   }
 }
 
 .hero-brand-row {
   display: flex;
-  align-items: center;
+  align-items: safe center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: var(--avis-space-4);
+  gap: var(--avis-space-3);
 }
 
 /* Official sub-brand with-name SVG logo >= 32px height */
 .hero-brand-logo {
-  block-size: 2.375rem;
+  block-size: 2.25rem;
   inline-size: auto;
   display: block;
 }
@@ -521,15 +519,16 @@ a {
   font-size: 0.875rem;
 }
 
-/* Fluid clamp with rem min/max (3.375 / 2.25 = 1.5x <= 2.5x for WCAG 1.4.4 200% zoom) */
+/* Fluid clamp with rem min/max (3.125 / 2.125 = 1.47x <= 2.5x for WCAG 1.4.4 200% zoom) */
 .hero-primary-block h1 {
   margin: 0;
   font-family: var(--avis-font-display);
   font-weight: 700;
-  font-size: clamp(2.25rem, 1.65rem + 2vw, 3.375rem);
-  line-height: 1.08;
+  font-size: clamp(2.125rem, 1.55rem + 1.9vw, 3.125rem);
+  line-height: 1.1;
   letter-spacing: -0.015em;
   color: var(--avis-white);
+  max-inline-size: 30ch;
 }
 
 .hero-sub-block {
@@ -544,7 +543,7 @@ a {
 
 @media (width < 40rem) {
   .hero-sub-block {
-    padding: var(--avis-space-5) var(--avis-space-4);
+    padding: var(--avis-space-4);
   }
 }
 
@@ -552,12 +551,14 @@ a {
   margin: 0;
   font-size: 1.0625rem;
   line-height: 1.55;
-  max-inline-size: 62ch;
+  max-inline-size: 68ch;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
+  flex-wrap: balance;
+  align-items: safe center;
   gap: var(--avis-space-3);
 }
 
@@ -633,21 +634,12 @@ a {
   color: var(--avis-white);
 }
 
-/* Right Column: Inline Featured Video Stage or API Code Stage */
-.hero-media-stage {
+/* Gateway Unified OpenAI SDK Block (placed cleanly inside Section 02 container) */
+.gateway-code-stage {
+  margin-block-end: var(--avis-space-5);
   background: var(--avis-black);
   color: var(--avis-sea-white);
-  border-inline-start: 1px solid var(--avis-black);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-@media (width < 61.25rem) {
-  .hero-media-stage {
-    border-inline-start: 0;
-    border-block-start: 1px solid var(--avis-black);
-  }
+  border: 1px solid var(--avis-black);
 }
 
 .hero-media-bar {
@@ -655,8 +647,9 @@ a {
   background: var(--avis-sapphire);
   color: var(--avis-sea-white);
   display: flex;
-  align-items: center;
+  align-items: safe center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: var(--avis-space-3);
   font-family: var(--avis-font-mono);
   font-size: 0.75rem;
@@ -667,38 +660,25 @@ a {
   border-block-end: 1px solid var(--avis-black);
 }
 
-.hero-video-frame {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--avis-black);
-  min-block-size: 19rem;
-}
-
-.hero-video-frame video {
-  display: block;
-  inline-size: 100%;
-  block-size: auto;
-  max-block-size: 27rem;
-  aspect-ratio: 16 / 9;
-  object-fit: contain;
-  background: var(--avis-black);
-}
-
-/* AVIS Gateway Unified OpenAI SDK Stage (used when movie clips are irrelevant) */
 .hero-code-frame {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr;
   background: var(--avis-black);
   padding: var(--avis-space-5);
-  gap: var(--avis-space-4);
+  gap: var(--avis-space-5);
+  align-items: center;
+}
+
+@media (width < 54rem) {
+  .hero-code-frame {
+    grid-template-columns: 1fr;
+    padding: var(--avis-space-4);
+  }
 }
 
 .hero-code-pre {
   margin: 0;
+  min-inline-size: 0;
   padding: var(--avis-space-4);
   background: #0a1428;
   border: 1px solid var(--avis-sapphire);
@@ -724,14 +704,7 @@ a {
 
 .hero-code-metrics {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--avis-space-2);
-}
-
-@media (width < 36rem) {
-  .hero-code-metrics {
-    grid-template-columns: 1fr;
-  }
+  gap: var(--avis-space-3);
 }
 
 .hero-code-pill {
@@ -1021,6 +994,11 @@ a {
   gap: var(--avis-space-5);
 }
 
+.video-grid--single {
+  grid-template-columns: minmax(0, 56rem);
+  justify-content: center;
+}
+
 .video-grid--3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -1084,7 +1062,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: clip;
 }
 
 .video-stage video {
@@ -1377,6 +1355,8 @@ a {
    ========================================================================== */
 .table-wrapper {
   overflow: auto;
+  scrollbar-gutter: stable;
+  overscroll-behavior: contain;
   max-inline-size: 100%;
   max-block-size: min(36rem, 80dvh);
   container-type: inline-size;
@@ -1503,7 +1483,8 @@ a {
 .filter-bar {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  flex-wrap: balance;
+  align-items: safe center;
   gap: var(--avis-space-2);
   margin-block-end: var(--avis-space-4);
 }
@@ -1690,7 +1671,6 @@ a {
 @media print {
   .site-header,
   .hero-actions,
-  .hero-media-stage,
   .video-stage,
   .filter-bar {
     display: none !important;
@@ -1701,10 +1681,7 @@ a {
     color: #000000;
   }
 
-  .hero-split {
-    grid-template-columns: 1fr;
-  }
-
+  .hero-shell,
   .hero-primary-block,
   .hero-sub-block,
   .credential-band,
