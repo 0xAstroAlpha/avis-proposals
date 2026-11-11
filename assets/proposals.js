@@ -125,7 +125,6 @@ if (!Object.hasOwn(HTMLElement.prototype, "popover")) {
 (() => {
   const allVideos = Array.from(document.querySelectorAll("video"));
 
-  // Ensure playing one embedded video automatically pauses any other playing video
   for (const vid of allVideos) {
     vid.addEventListener("play", () => {
       for (const other of allVideos) {
@@ -136,7 +135,6 @@ if (!Object.hasOwn(HTMLElement.prototype, "popover")) {
     });
   }
 
-  // Respect prefers-reduced-motion if any video ever uses autoplay
   const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
   function syncReducedMotion(prefersReducedMotion) {
     for (const video of document.querySelectorAll("video[autoplay]")) {
@@ -149,7 +147,6 @@ if (!Object.hasOwn(HTMLElement.prototype, "popover")) {
   syncReducedMotion(reducedMotionQuery.matches);
   reducedMotionQuery.addEventListener("change", (e) => syncReducedMotion(e.matches));
 
-  // IntersectionObserver fallback for browsers without native HTMLMediaElement.prototype.loading (e.g. Firefox/Safari)
   const supportsLazyMedia = Object.hasOwn(HTMLMediaElement.prototype, "loading");
   if (!supportsLazyMedia) {
     const lazyVideos = document.querySelectorAll('video[loading="lazy"]');
@@ -210,5 +207,35 @@ if (!Object.hasOwn(HTMLElement.prototype, "popover")) {
         }, 1800);
       } catch (_) {}
     });
+  }
+})();
+
+// 5. Filterable Video Demo Use-Case Request Table (video-requests.html)
+(() => {
+  const chips = Array.from(document.querySelectorAll("[data-video-filter]"));
+  if (!chips.length) return;
+  const rows = Array.from(document.querySelectorAll("tr[data-segment]"));
+  const countEl = document.getElementById("video-request-count");
+
+  function applyFilter(filterKey) {
+    let visible = 0;
+    for (const chip of chips) {
+      chip.setAttribute("aria-pressed", String(chip.dataset.videoFilter === filterKey));
+    }
+    for (const row of rows) {
+      const match =
+        filterKey === "all" ||
+        row.dataset.segment === filterKey ||
+        row.dataset.priority === filterKey;
+      row.hidden = !match;
+      if (match) visible += 1;
+    }
+    if (countEl) {
+      countEl.textContent = `HIỂN THỊ ${visible}/${rows.length} USECASE`;
+    }
+  }
+
+  for (const chip of chips) {
+    chip.addEventListener("click", () => applyFilter(chip.dataset.videoFilter || "all"));
   }
 })();

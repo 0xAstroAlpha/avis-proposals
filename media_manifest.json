@@ -53,7 +53,7 @@
   },
   "video-233-film": {
     "slug": "video-233-film",
-    "title": "AI Cinematic Film — Phim Ngắn Điện Ảnh Giả Tưởng",
+    "title": "Cloud World (9:16) — Phim Ngắn Giả Tưởng Điện Ảnh",
     "width": 1080,
     "height": 1920,
     "aspect": "9:16",
@@ -181,22 +181,9 @@
     "r2_video_url": "https://media.lehuyducanh.com/avis-proposals/videos/tvc-cau-di-bo.mp4",
     "r2_poster_url": "https://media.lehuyducanh.com/avis-proposals/posters/tvc-cau-di-bo.jpg"
   },
-  "others-apero-demo": {
-    "slug": "others-apero-demo",
-    "title": "Cloud World (9:16) — Campaign Launch Film",
-    "width": 1080,
-    "height": 1920,
-    "aspect": "9:16",
-    "duration": 90.43,
-    "size_bytes": 21163679,
-    "local_video_path": "media/videos/others-apero-demo.mp4",
-    "local_poster_path": "media/posters/others-apero-demo.jpg",
-    "r2_video_url": "https://media.lehuyducanh.com/avis-proposals/videos/others-apero-demo.mp4",
-    "r2_poster_url": "https://media.lehuyducanh.com/avis-proposals/posters/others-apero-demo.jpg"
-  },
   "drift-ep01": {
     "slug": "drift-ep01",
-    "title": "Drift (Ep. 01) — Sci-Fi Action Short Drama",
+    "title": "Drift (Ep. 01) — Corporate & Sci-Fi Short Drama",
     "width": 480,
     "height": 854,
     "aspect": "9:16",
@@ -209,7 +196,7 @@
   },
   "mermaid-ep01": {
     "slug": "mermaid-ep01",
-    "title": "Beloved Mermaid (Ep. 01) — Fantasy Romance Short Drama",
+    "title": "Beloved Mermaid (Ep. 01) — Fantasy Short Drama",
     "width": 480,
     "height": 854,
     "aspect": "9:16",
@@ -219,19 +206,6 @@
     "local_poster_path": "media/posters/mermaid-ep01.jpg",
     "r2_video_url": "https://media.lehuyducanh.com/avis-proposals/videos/mermaid-ep01.mp4",
     "r2_poster_url": "https://media.lehuyducanh.com/avis-proposals/posters/mermaid-ep01.jpg"
-  },
-  "others-ep01": {
-    "slug": "others-ep01",
-    "title": "The Good Girl Demo (Ep. 01) — Vertical Microdrama",
-    "width": 480,
-    "height": 854,
-    "aspect": "9:16",
-    "duration": 57.47,
-    "size_bytes": 3724068,
-    "local_video_path": "media/videos/others-ep01.mp4",
-    "local_poster_path": "media/posters/others-ep01.jpg",
-    "r2_video_url": "https://media.lehuyducanh.com/avis-proposals/videos/others-ep01.mp4",
-    "r2_poster_url": "https://media.lehuyducanh.com/avis-proposals/posters/others-ep01.jpg"
   },
   "remake-dragon-queen": {
     "slug": "remake-dragon-queen",
@@ -258,31 +232,5 @@
     "local_poster_path": "media/posters/remake-western-cast.jpg",
     "r2_video_url": "https://media.lehuyducanh.com/avis-proposals/videos/remake-western-cast.mp4",
     "r2_poster_url": "https://media.lehuyducanh.com/avis-proposals/posters/remake-western-cast.jpg"
-  },
-  "remake-good-girl": {
-    "slug": "remake-good-girl",
-    "title": "Good Girl & The MC Sergeant — Remake Đa Thị Trường",
-    "width": 1280,
-    "height": 960,
-    "aspect": "16:9",
-    "duration": 18.14,
-    "size_bytes": 2970704,
-    "local_video_path": "media/videos/remake-good-girl.mp4",
-    "local_poster_path": "media/posters/remake-good-girl.jpg",
-    "r2_video_url": "https://media.lehuyducanh.com/avis-proposals/videos/remake-good-girl.mp4",
-    "r2_poster_url": "https://media.lehuyducanh.com/avis-proposals/posters/remake-good-girl.jpg"
-  },
-  "remake-compare-prob4": {
-    "slug": "remake-compare-prob4",
-    "title": "Remake Split-Screen Comparison — Bản Gốc vs. Bản Remake",
-    "width": 1280,
-    "height": 960,
-    "aspect": "16:9",
-    "duration": 18.14,
-    "size_bytes": 3199184,
-    "local_video_path": "media/videos/remake-compare-prob4.mp4",
-    "local_poster_path": "media/posters/remake-compare-prob4.jpg",
-    "r2_video_url": "https://media.lehuyducanh.com/avis-proposals/videos/remake-compare-prob4.mp4",
-    "r2_poster_url": "https://media.lehuyducanh.com/avis-proposals/posters/remake-compare-prob4.jpg"
   }
 }

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="vi" data-avis-brand="masterbrand">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bảng Request Video Demo Usecase — AVIS Proposals Backlog</title>
+  <meta name="description" content="Danh sách 20 kịch bản video demo usecase cần sản xuất bổ sung cho 8 nhóm khách hàng B2B của AVIS và báo cáo rà soát các video không phù hợp đã gỡ bỏ.">
+  <link rel="icon" type="image/svg+xml" href="assets/brand/logo/masterbrand/avis-masterbrand-symbol-azure.svg">
+  <link rel="stylesheet" href="assets/proposals.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-logo" href="index.html">
+      <img src="assets/brand/logo/masterbrand/avis-masterbrand-full-azure.svg" alt="AVIS" height="26">
+      <span class="site-logo-divider" aria-hidden="true"></span>
+      <span class="site-logo-tag">PROPOSALS</span>
+    </a>
+    <nav class="site-nav" aria-label="Danh mục Proposal theo nhóm khách hàng">
+      <button
+        class="menu-button"
+        type="button"
+        popovertarget="site-menu"
+        popovertargetaction="toggle"
+        aria-controls="site-menu"
+      >
+        <span>Danh mục Nhóm KH</span>
+      </button>
+      <ul id="site-menu" class="site-menu" popover="auto">
+        <li><a href="index.html">Tổng quan</a></li><li><a href="proposals/indie-cinema-ott.html">Phim Độc lập &amp; OTT</a></li><li><a href="proposals/production-house-tvc.html">Production House TVC</a></li><li><a href="proposals/vfx-cgi-animation.html">VFX, CGI &amp; 3D</a></li><li><a href="proposals/short-drama-remake.html">Short Drama &amp; Remake</a></li><li><a href="proposals/archviz-interior-design.html">Archviz &amp; Nội thất</a></li><li><a href="proposals/creative-digital-agency.html">Creative &amp; Digital Agency</a></li><li><a href="proposals/ai-saas-enterprise-gateway.html">AI SaaS &amp; Gateway API</a></li><li><a href="proposals/creative-campus-academy.html">Đại học &amp; Học viện</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero-shell">
+    <div class="hero-primary-block">
+      <div class="container">
+        <div class="hero-brand-row" style="margin-block-end: 1.5rem;">
+          <img class="hero-brand-logo" src="assets/brand/logo/masterbrand/avis-masterbrand-full-sea-white.svg" alt="AVIS" height="38">
+          <span class="hero-kicker">INTERNAL PRODUCTION BACKLOG · VIDEO DEMO REQUESTS</span>
+        </div>
+        <h1>Bảng Request Video Demo Usecase Theo Từng Nhóm Khách Hàng.</h1>
+      </div>
+    </div>
+    <div class="hero-sub-block">
+      <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;">
+        <p>
+          Tổng hợp các video demo chuyên biệt cần sản xuất bổ sung để lấp đầy những category đang thiếu tư liệu chuẩn
+          (đặc biệt là <strong>Archviz &amp; Nội thất</strong> và <strong>AI SaaS &amp; Gateway API</strong>), thay vì dùng gượng ép các clip phim khác ngành.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-cta-turquoise btn-sm" href="media/avis_video_demo_requests.csv" download="avis_video_demo_requests.csv">Tải File CSV (Excel/Sheets) ↓</a>
+          <a class="btn btn-outline-light btn-sm" href="index.html">← Về Trang Chủ Proposals</a>
+          <button type="button" class="btn btn-outline-light btn-sm" onclick="window.print()">In PDF</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="credential-band">
+      <div class="cred-cell">
+        <span class="mono-label">CLEAN VIDEOS KEPT</span>
+        <strong>18 Video Chuẩn</strong>
+        <span>Đúng ngữ cảnh ngành &amp; an toàn tuyệt đối cho môi trường B2B</span>
+      </div>
+      <div class="cred-cell">
+        <span class="mono-label">REMOVED CLIPS</span>
+        <strong>4 Video Đã Gỡ</strong>
+        <span>Loại bỏ hoàn toàn clip lệch category, trùng lặp hoặc nhạy cảm</span>
+      </div>
+      <div class="cred-cell">
+        <span class="mono-label">NEW REQUEST BACKLOG</span>
+        <strong>20 Usecase Mới</strong>
+        <span>Có kịch bản Input → Output, tỉ lệ khung hình và thời lượng rõ ràng</span>
+      </div>
+      <div class="cred-cell">
+        <span class="mono-label">URGENT PRIORITY</span>
+        <strong>8 Video P0</strong>
+        <span>Ưu tiên quay trước cho Archviz, Gateway API, Hybrid TVC &amp; Agency</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-label"><span class="avis-tri avis-tri--up avis-tri--marker" aria-hidden="true"></span> 01 / BẢNG ĐẶT HÀNG SẢN XUẤT VIDEO DEMO MỚI (20 USECASE)</div>
+      <div class="section-header">
+        <h2>Lọc nhanh theo mức độ ưu tiên hoặc từng nhóm khách hàng</h2>
+        <p>Sau khi đội ngũ sản xuất xuất file MP4 mới, chỉ cần chép vào thư mục media và khai báo thêm vào <code>proposals_data.py</code>.</p>
+      </div>
+
+      <div class="filter-bar" role="toolbar" aria-label="Bộ lọc bảng request video demo">
+        <button type="button" class="filter-chip" data-video-filter="all" aria-pressed="true">Tất cả (20)</button><button type="button" class="filter-chip" data-video-filter="P0" aria-pressed="false">Ưu tiên P0 (8)</button><button type="button" class="filter-chip" data-video-filter="indie-cinema-ott" aria-pressed="false">Phim Độc lập &amp; OTT (2)</button><button type="button" class="filter-chip" data-video-filter="production-house-tvc" aria-pressed="false">Production House TVC (2)</button><button type="button" class="filter-chip" data-video-filter="vfx-cgi-animation" aria-pressed="false">VFX, CGI &amp; 3D (3)</button><button type="button" class="filter-chip" data-video-filter="short-drama-remake" aria-pressed="false">Short Drama &amp; Remake (2)</button><button type="button" class="filter-chip" data-video-filter="archviz-interior-design" aria-pressed="false">Archviz &amp; Nội thất (4)</button><button type="button" class="filter-chip" data-video-filter="creative-digital-agency" aria-pressed="false">Creative &amp; Digital Agency (2)</button><button type="button" class="filter-chip" data-video-filter="ai-saas-enterprise-gateway" aria-pressed="false">AI SaaS &amp; Gateway API (4)</button><button type="button" class="filter-chip" data-video-filter="creative-campus-academy" aria-pressed="false">Đại học &amp; Học viện (1)</button>
+        <span id="video-request-count" class="filter-count" aria-live="polite">HIỂN THỊ 20/20 USECASE</span>
+      </div>
+
+      <div tabindex="0" role="region" aria-labelledby="caption-video-requests" class="table-wrapper table-wrapper--tall">
+        <table class="benchmark-table" style="--label-2: 'Ưu tiên'; --label-3: 'Nhóm KH'; --label-4: 'Tên Video Demo'; --label-5: 'Kịch bản Minh họa'; --label-6: 'Chuẩn & Ghi chú';">
+          <caption id="caption-video-requests">Danh mục Video Demo Usecase Cần Bổ Sung Cho 8 Proposal AVIS</caption>
+          <thead>
+            <tr>
+              <th scope="col">Mã</th>
+              <th scope="col">Ưu tiên</th>
+              <th scope="col">Nhóm Khách hàng</th>
+              <th scope="col">Tên Video Demo Cần Bổ Sung</th>
+              <th scope="col">Kịch bản Minh họa (Input → Output)</th>
+              <th scope="col">Chuẩn Kỹ thuật &amp; Mục tiêu</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-segment="archviz-interior-design" data-priority="P0">
+            <th scope="row">VRQ-01</th>
+            <td><span class="prio-badge prio-p0">P0 · CẦN GẤP</span></td>
+            <td><a href="proposals/archviz-interior-design.html"><strong>05 · Archviz &amp; Nội thất</strong></a></td>
+            <td><strong>SketchUp / 3ds Max Clay → Phối cảnh 4K Photorealistic</strong></td>
+            <td>Split-screen quét ngang: bên trái là khối trắng/wireframe phòng khách biệt thự hoặc mặt đứng công trình + Depth pass; bên phải kết xuất 4K vật liệu gỗ, đá marble, kính phản xạ tự nhiên.</td>
+            <td><strong>16:9 · 15–20s · 1080p/4K</strong><br>Thay thế các clip phim/ngôn tình từng gắn tạm ở trang Archviz</td>
+          </tr><tr data-segment="archviz-interior-design" data-priority="P0">
+            <th scope="row">VRQ-02</th>
+            <td><span class="prio-badge prio-p0">P0 · CẦN GẤP</span></td>
+            <td><a href="proposals/archviz-interior-design.html"><strong>05 · Archviz &amp; Nội thất</strong></a></td>
+            <td><strong>Mask Brush Đổi Vật liệu &amp; Relight Bình minh – Hoàng hôn – Đêm</strong></td>
+            <td>Quay thao tác tô nhanh vùng sàn/tường/facade đổi 3 phương án vật liệu, tiếp nối cú chuyển mượt ánh sáng Nắng sớm → Golden Hour → Lên đèn ban đêm trên cùng một góc máy.</td>
+            <td><strong>16:9 · 20–25s · 1080p</strong><br>Bổ sung minh chứng trực quan cho Tab 02 (Replace &amp; Relight)</td>
+          </tr><tr data-segment="archviz-interior-design" data-priority="P0">
+            <th scope="row">VRQ-03</th>
+            <td><span class="prio-badge prio-p0">P0 · CẦN GẤP</span></td>
+            <td><a href="proposals/archviz-interior-design.html"><strong>05 · Archviz &amp; Nội thất</strong></a></td>
+            <td><strong>Start → End Frame Walkthrough Dự án BĐS &amp; Resort Có Cư dân</strong></td>
+            <td>Từ 2 ảnh phối cảnh tĩnh khu đô thị/resort ven biển, tạo đường bay camera mượt qua sảnh đón, hồ bơi mặt nước gợn sóng và cư dân dạo bộ tự nhiên (không cứng như người 3D truyền thống).</td>
+            <td><strong>16:9 · 20–30s · 1080p/4K</strong><br>Làm Hero/Showcase chủ lực cho tệp Chủ đầu tư &amp; Phim 3D BĐS</td>
+          </tr><tr data-segment="ai-saas-enterprise-gateway" data-priority="P0">
+            <th scope="row">VRQ-04</th>
+            <td><span class="prio-badge prio-p0">P0 · CẦN GẤP</span></td>
+            <td><a href="proposals/ai-saas-enterprise-gateway.html"><strong>07 · AI SaaS &amp; Gateway API</strong></a></td>
+            <td><strong>Screencast Tích hợp AVIS Gateway Trong 60 Giây (OpenAI SDK Drop-in)</strong></td>
+            <td>Màn hình IDE đổi duy nhất `base_url=&#x27;https://avis.xyz/v1&#x27;`, chạy live request luân phiên qua `deepseek-v4-flash`, `claude-sonnet-4.6` và `seedance-2.0` trả kết quả tức thì không sửa logic app.</td>
+            <td><strong>16:9 · 30–45s · 1080p (UI sắc nét)</strong><br>Thay thế hoàn toàn việc dùng video phim điện ảnh trên trang Gateway API</td>
+          </tr><tr data-segment="ai-saas-enterprise-gateway" data-priority="P0">
+            <th scope="row">VRQ-05</th>
+            <td><span class="prio-badge prio-p0">P0 · CẦN GẤP</span></td>
+            <td><a href="proposals/ai-saas-enterprise-gateway.html"><strong>07 · AI SaaS &amp; Gateway API</strong></a></td>
+            <td><strong>Dashboard Quản trị Quota Đa Môi trường &amp; Xuất Bảng kê e-VAT VND</strong></td>
+            <td>Quay giao diện Portal `avis.xyz`: tách API Key theo `dev / staging / prod`, đặt trần chi tiêu VND real-time, xem đồ thị token/media và tải bảng kê đối soát hóa đơn điện tử VAT.</td>
+            <td><strong>16:9 · 25–35s · 1080p</strong><br>Chốt điểm đau lớn nhất của CFO, CTO &amp; Đơn vị tích hợp SI</td>
+          </tr><tr data-segment="production-house-tvc" data-priority="P0">
+            <th scope="row">VRQ-06</th>
+            <td><span class="prio-badge prio-p0">P0 · CẦN GẤP</span></td>
+            <td><a href="proposals/production-house-tvc.html"><strong>02 · Production House TVC</strong></a></td>
+            <td><strong>Hybrid Product TVC — Giữ 100% Sản phẩm Quay Thật + Đại cảnh AI</strong></td>
+            <td>Split-screen: bên trái là chai nước giải khát / mỹ phẩm / ô tô quay phông đơn giản tại studio giữ nguyên từng chữ trên bao bì; bên phải ghép mượt vào đại cảnh thiên nhiên/đô thị điện ảnh.</td>
+            <td><strong>16:9 · 15–25s · 1080p</strong><br>Giải đáp thắc mắc số 1 của Production House về độ chuẩn logo/bao bì thật</td>
+          </tr><tr data-segment="creative-digital-agency" data-priority="P0">
+            <th scope="row">VRQ-07</th>
+            <td><span class="prio-badge prio-p0">P0 · CẦN GẤP</span></td>
+            <td><a href="proposals/creative-digital-agency.html"><strong>06 · Creative &amp; Digital Agency</strong></a></td>
+            <td><strong>Performance Ad Variations — 1 Sản phẩm Nhân bản 5 Hook 9:16</strong></td>
+            <td>Đặt 3–4 khung điện thoại 9:16 cạnh nhau chạy đồng thời các biến thể hook 3 giây đầu khác nhau (đổi bối cảnh, góc máy, nhân vật KOL ảo) cho cùng một sản phẩm FMCG/Tech/Beauty.</td>
+            <td><strong>16:9 ghép 3 khung 9:16 · 15–20s</strong><br>Thay thế clip ngôn tình `others-ep01` đã gỡ khỏi trang Agency</td>
+          </tr><tr data-segment="indie-cinema-ott" data-priority="P0">
+            <th scope="row">VRQ-08</th>
+            <td><span class="prio-badge prio-p0">P0 · CẦN GẤP</span></td>
+            <td><a href="proposals/indie-cinema-ott.html"><strong>01 · Phim Độc lập &amp; OTT</strong></a></td>
+            <td><strong>Hậu kỳ Bảo mật: Xóa Dây cáp/Biển hiệu &amp; AVIS Transcribe Offline</strong></td>
+            <td>Nửa đầu: tô mask xóa micro boom, dây cáp treo hoặc biển quảng cáo hiện đại trên cảnh cổ trang; Nửa sau: ngắt Wi-Fi chạy `AVIS Transcribe` nhận diện thoại tiếng Việt xuất file SRT ngay trên máy.</td>
+            <td><strong>16:9 · 25–30s · 1080p</strong><br>Minh chứng trực tiếp tính năng bảo mật Screener ăn tiền nhất cho Đoàn phim</td>
+          </tr><tr data-segment="archviz-interior-design" data-priority="P1">
+            <th scope="row">VRQ-09</th>
+            <td><span class="prio-badge prio-p1">P1 · QUAN TRỌNG</span></td>
+            <td><a href="proposals/archviz-interior-design.html"><strong>05 · Archviz &amp; Nội thất</strong></a></td>
+            <td><strong>Biến Mặt bằng 2D / Phác thảo Tay sang Không gian Nội thất 3D</strong></td>
+            <td>Từ bản vẽ bố trí mặt bằng hoặc nét vẽ tay KTS trên iPad, sinh nhanh 3 phong cách nội thất (Indochine, Japandi, Modern Luxury) giữ đúng vị trí cửa và đồ nội thất chính.</td>
+            <td><strong>16:9 · 15–20s · 1080p</strong><br>Phục vụ tệp Công ty Thiết kế – Thi công Nội thất dân dụng &amp; F&amp;B</td>
+          </tr><tr data-segment="ai-saas-enterprise-gateway" data-priority="P1">
+            <th scope="row">VRQ-10</th>
+            <td><span class="prio-badge prio-p1">P1 · QUAN TRỌNG</span></td>
+            <td><a href="proposals/ai-saas-enterprise-gateway.html"><strong>07 · AI SaaS &amp; Gateway API</strong></a></td>
+            <td><strong>Multi-Model Cost Routing Benchmark (Tiết kiệm 75% COGS)</strong></td>
+            <td>Minh họa luồng AI Agent doanh nghiệp tự động định tuyến câu hỏi FAQ sang `DeepSeek V4 Flash` và câu phân tích hợp đồng phức tạp sang `Claude Sonnet 4.6`, kèm đồng hồ đo độ trễ &amp; chi phí VND.</td>
+            <td><strong>16:9 · 25–30s · 1080p</strong><br>Thuyết phục Head of AI / CTO của SaaS &amp; EdTech có tập user freemium lớn</td>
+          </tr><tr data-segment="ai-saas-enterprise-gateway" data-priority="P1">
+            <th scope="row">VRQ-11</th>
+            <td><span class="prio-badge prio-p1">P1 · QUAN TRỌNG</span></td>
+            <td><a href="proposals/ai-saas-enterprise-gateway.html"><strong>07 · AI SaaS &amp; Gateway API</strong></a></td>
+            <td><strong>Batch Creative API cho E-Commerce &amp; Mobile Game UA</strong></td>
+            <td>Từ danh mục 10 ảnh sản phẩm hoặc asset nhân vật game, gọi API `Seedance 2.0` / `Wan 2.7` sinh tự động loạt video quảng cáo UA có âm thanh sẵn sàng đẩy lên Meta/TikTok Ads.</td>
+            <td><strong>16:9 · 20–25s · 1080p</strong><br>Thay thế clip `others-apero-demo` từng gắn nhầm cho Consumer/UA App</td>
+          </tr><tr data-segment="production-house-tvc" data-priority="P1">
+            <th scope="row">VRQ-12</th>
+            <td><span class="prio-badge prio-p1">P1 · QUAN TRỌNG</span></td>
+            <td><a href="proposals/production-house-tvc.html"><strong>02 · Production House TVC</strong></a></td>
+            <td><strong>Outpainting Đa Tỉ lệ (16:9 ↔ 9:16 ↔ 1:1) Trên NLE 3 Tầng</strong></td>
+            <td>Từ 1 master TVC 16:9 đã duyệt, mở rộng thông minh sang 9:16 dọc và 1:1 vuông không mất chủ thể, sau đó cắt bản 15s/30s ngay trên timeline NLE của AVIS Creative Studio.</td>
+            <td><strong>16:9 · 20s · 1080p</strong><br>Chứng minh tốc độ bàn giao trọn gói multi-format cho Client</td>
+          </tr><tr data-segment="vfx-cgi-animation" data-priority="P1">
+            <th scope="row">VRQ-13</th>
+            <td><span class="prio-badge prio-p1">P1 · QUAN TRỌNG</span></td>
+            <td><a href="proposals/vfx-cgi-animation.html"><strong>03 · VFX, CGI &amp; 3D</strong></a></td>
+            <td><strong>Local WebGPU Roto, Object Tracker &amp; Depth Pass → Nuke / AE</strong></td>
+            <td>Quay trực tiếp quá trình tách mask sequence bám theo nhân vật chuyển động nhanh và xuất Depth Anything V2 pass trên workstation nội bộ, rồi kéo thả mượt vào comp Nuke/After Effects.</td>
+            <td><strong>16:9 · 20–30s · 1080p</strong><br>Nói đúng ngôn ngữ kỹ thuật của VFX Supervisor &amp; Compositing Lead</td>
+          </tr><tr data-segment="vfx-cgi-animation" data-priority="P1">
+            <th scope="row">VRQ-14</th>
+            <td><span class="prio-badge prio-p1">P1 · QUAN TRỌNG</span></td>
+            <td><a href="proposals/vfx-cgi-animation.html"><strong>03 · VFX, CGI &amp; 3D</strong></a></td>
+            <td><strong>Blender / Unreal Playblast → Final Shot &amp; Crowd Simulation</strong></td>
+            <td>So sánh 2 khung hình: bên trái là playblast xám từ Blender/Unreal + lưới đám đông; bên phải là cảnh đại chiến hoặc đô thị tương lai giữ chuẩn 100% tiêu cự và đường chạy camera 3D.</td>
+            <td><strong>16:9 · 20–25s · 1080p</strong><br>Bổ sung demo chuyên sâu 3D Pipeline thay cho clip blockout ngắn</td>
+          </tr><tr data-segment="short-drama-remake" data-priority="P1">
+            <th scope="row">VRQ-15</th>
+            <td><span class="prio-badge prio-p1">P1 · QUAN TRỌNG</span></td>
+            <td><a href="proposals/short-drama-remake.html"><strong>04 · Short Drama &amp; Remake</strong></a></td>
+            <td><strong>Branded Microdrama 9:16 Lịch sự — Nhân vật Cầm Sản phẩm Thật</strong></td>
+            <td>Trích đoạn 45–60s phim ngắn văn phòng/gia đình hiện đại lịch sự (B2B-safe), khóa mặt diễn viên qua 8 góc cắt liên tiếp và lồng ghép tự nhiên sản phẩm Ngân hàng / Mỹ phẩm / Đồ uống.</td>
+            <td><strong>9:16 · 45–60s · 1080x1920</strong><br>Thay thế 2 clip `remake-good-girl` &amp; `remake-compare-prob4` có thoại nhạy cảm</td>
+          </tr><tr data-segment="creative-digital-agency" data-priority="P1">
+            <th scope="row">VRQ-16</th>
+            <td><span class="prio-badge prio-p1">P1 · QUAN TRỌNG</span></td>
+            <td><a href="proposals/creative-digital-agency.html"><strong>06 · Creative &amp; Digital Agency</strong></a></td>
+            <td><strong>Brand Mascot Consistency — Đồng nhất Nhân vật Đa Điểm chạm IMC</strong></td>
+            <td>Từ 1 bản thiết kế linh vật/đại sứ thương hiệu, triển khai đồng bộ sang Key Visual OOH ngoài trời, POSM siêu thị, sticker mạng xã hội và TVC hoạt hình ngắn 15s.</td>
+            <td><strong>16:9 · 20–25s · 1080p</strong><br>Đánh trúng nhu cầu Pitch IMC &amp; Rebranding của các Creative Agency</td>
+          </tr><tr data-segment="short-drama-remake" data-priority="P2">
+            <th scope="row">VRQ-17</th>
+            <td><span class="prio-badge prio-p2">P2 · BỔ SUNG</span></td>
+            <td><a href="proposals/short-drama-remake.html"><strong>04 · Short Drama &amp; Remake</strong></a></td>
+            <td><strong>Multi-Language Dubbing &amp; Lip-Sync (Việt → Anh / Tây Ban Nha / Nhật)</strong></td>
+            <td>Cùng một phân cảnh thoại cận mặt diễn viên (nội dung công sở B2B-safe), chuyển mượt 4 ngôn ngữ với khẩu hình môi và cảm xúc giọng nói khớp tự nhiên từng âm tiết.</td>
+            <td><strong>16:9 hoặc 9:16 · 25–30s · 1080p</strong><br>Minh chứng năng lực xuất khẩu nội dung sang Mỹ, LATAM, Nhật, UAE</td>
+          </tr><tr data-segment="indie-cinema-ott" data-priority="P2">
+            <th scope="row">VRQ-18</th>
+            <td><span class="prio-badge prio-p2">P2 · BỔ SUNG</span></td>
+            <td><a href="proposals/indie-cinema-ott.html"><strong>01 · Phim Độc lập &amp; OTT</strong></a></td>
+            <td><strong>Script-to-7-Angles Coverage Trong 90 Giây</strong></td>
+            <td>Dán 1 trang kịch bản tiếng Việt vào `Script node`, tự động bóc shot list và bung ra 7 góc máy (Wide, Medium, Close-up, OTS, Overhead, Tilt, Rear) giữ nguyên ánh sáng phim.</td>
+            <td><strong>16:9 · 25–35s · 1080p</strong><br>Giúp Đạo diễn &amp; Biên kịch thấy ngay tốc độ tiền kỳ trên giao diện thật</td>
+          </tr><tr data-segment="creative-campus-academy" data-priority="P2">
+            <th scope="row">VRQ-19</th>
+            <td><span class="prio-badge prio-p2">P2 · BỔ SUNG</span></td>
+            <td><a href="proposals/creative-campus-academy.html"><strong>08 · Đại học &amp; Học viện</strong></a></td>
+            <td><strong>Trải nghiệm Lớp học Thực tế AVIS Creative Campus (Giảng viên &amp; SV)</strong></td>
+            <td>Quay quy trình giảng viên phát bài tập bằng `Template Node`, 40 sinh viên mở trình duyệt trên máy phòng lab tiêu chuẩn nộp bài và xem nhận xét ngay trong tiết học (kèm hình ảnh hợp tác VTV College nếu có).</td>
+            <td><strong>16:9 · 30–45s · 1080p</strong><br>Tăng độ tin cậy cao nhất khi trình bày với Ban Giám hiệu &amp; Trưởng khoa</td>
+          </tr><tr data-segment="vfx-cgi-animation" data-priority="P2">
+            <th scope="row">VRQ-20</th>
+            <td><span class="prio-badge prio-p2">P2 · BỔ SUNG</span></td>
+            <td><a href="proposals/vfx-cgi-animation.html"><strong>03 · VFX, CGI &amp; 3D</strong></a></td>
+            <td><strong>Plugin Gọi AVIS Gateway API Trực tiếp Từ Unreal / Houdini / Python</strong></td>
+            <td>Pipeline TD chạy tool nội bộ sinh texture 4K, concept prop và video pre-viz qua cổng API `avis.xyz` ngay bên trong giao diện DCC không cần mở trình duyệt.</td>
+            <td><strong>16:9 · 20–30s · 1080p</strong><br>Chốt sale kỹ thuật với các VFX/Game Studio quy mô 50–300 artist</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-label"><span class="avis-tri avis-tri--up avis-tri--marker" aria-hidden="true"></span> 02 / HIỆN TRẠNG PHÂN BỔ VIDEO TRÊN 8 PROPOSAL HIỆN TẠI</div>
+      <div class="section-header">
+        <h2>Nguyên tắc: Thà ẩn mục Showcase còn hơn nhúng video lệch ngành</h2>
+      </div>
+      <div tabindex="0" role="region" aria-labelledby="caption-current-inventory" class="table-wrapper">
+        <table class="benchmark-table" style="--label-2: 'Hero Media'; --label-3: 'Video Showcase Bên Dưới'; --label-4: 'Backlog Bổ sung';">
+          <caption id="caption-current-inventory">Ma trận Video Đang Hiển Thị Thực Tế Trên Từng Trang Proposal</caption>
+          <thead>
+            <tr>
+              <th scope="col">Trang Proposal</th>
+              <th scope="col">Hero Media (Đầu trang)</th>
+              <th scope="col">Video Showcase Bên Dưới</th>
+              <th scope="col">Backlog Cần Bổ sung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+            <th scope="row">01 · Phim Độc lập &amp; OTT</th>
+            <td><code>dragon-previs-vcam.mp4</code></td>
+            <td>vfx-motion.mp4, post-charsync.mp4, apolink.mp4, sound-demo.mp4</td>
+            <td><strong>Cần bổ sung 2 video</strong></td>
+          </tr><tr>
+            <th scope="row">02 · Production House TVC</th>
+            <td><code>trungchi-milo.mp4</code></td>
+            <td>tvc-cau-di-bo.mp4, previs-phone.mp4, previs-render.mp4</td>
+            <td><strong>Cần bổ sung 2 video</strong></td>
+          </tr><tr>
+            <th scope="row">03 · VFX, CGI &amp; 3D</th>
+            <td><code>vfx-motion.mp4</code></td>
+            <td>apolink-vfx-excerpt.mp4, post-charsync.mp4, animation-style.mp4, remake-dragon-queen.mp4</td>
+            <td><strong>Cần bổ sung 3 video</strong></td>
+          </tr><tr>
+            <th scope="row">04 · Short Drama &amp; Remake</th>
+            <td><code>remake-western-cast.mp4</code></td>
+            <td>drift-ep01.mp4, mermaid-ep01.mp4, remake-dragon-queen.mp4</td>
+            <td><strong>Cần bổ sung 2 video</strong></td>
+          </tr><tr>
+            <th scope="row">05 · Archviz &amp; Nội thất</th>
+            <td><code>tvc-cau-di-bo.mp4</code></td>
+            <td>Đã ẩn mục Showcase (chờ video đúng ngành)</td>
+            <td><strong>Cần bổ sung 4 video</strong></td>
+          </tr><tr>
+            <th scope="row">06 · Creative &amp; Digital Agency</th>
+            <td><code>trungchi-milo.mp4</code></td>
+            <td>tvc-cau-di-bo.mp4, video-233-film.mp4, drift-ep01.mp4</td>
+            <td><strong>Cần bổ sung 2 video</strong></td>
+          </tr><tr>
+            <th scope="row">07 · AI SaaS &amp; Gateway API</th>
+            <td><code>Code Stage (OpenAI SDK avis.xyz/v1)</code></td>
+            <td>Đã ẩn mục Showcase (chờ video đúng ngành)</td>
+            <td><strong>Cần bổ sung 4 video</strong></td>
+          </tr><tr>
+            <th scope="row">08 · Đại học &amp; Học viện</th>
+            <td><code>dragon-previs-vcam.mp4</code></td>
+            <td>previs-blockout.mp4, animation-style.mp4, video-233-film.mp4</td>
+            <td><strong>Cần bổ sung 1 video</strong></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-label"><span class="avis-tri avis-tri--up avis-tri--marker" aria-hidden="true"></span> 03 / NHẬT KÝ 4 VIDEO ĐÃ GỠ BỎ KHỎI REPO &amp; PROPOSAL</div>
+      <div class="section-header">
+        <h2>Rà soát trực quan từng khung hình để bảo vệ uy tín thương hiệu AVIS</h2>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+        <span class="card-tag">ĐÃ GỠ BỎ · others-apero-demo.mp4</span>
+        <h3>Bị gắn nhầm nhãn &#x27;Cloud World — Campaign Launch Film&#x27;</h3>
+        <p>Nội dung thực tế là cảnh tình cảm phòng tắm nhạy cảm, không phù hợp môi trường B2B Executive; đã thay đúng bằng file `video-233-film.mp4` (Cloud World thật).</p>
+      </article><article class="card">
+        <span class="card-tag">ĐÃ GỠ BỎ · remake-good-girl.mp4</span>
+        <h3>Đặt ở Short Drama &amp; bị gán ép sang Archviz</h3>
+        <p>Có phụ đề nhạy cảm trên khung hình và hoàn toàn không liên quan kiến trúc – nội thất; đã gỡ bỏ vĩnh viễn.</p>
+      </article><article class="card">
+        <span class="card-tag">ĐÃ GỠ BỎ · remake-compare-prob4.mp4</span>
+        <h3>Đặt ở Short Drama Split-Screen</h3>
+        <p>Trùng nội dung 100% với `remake-good-girl` (18.14s) và chứa thoại nhạy cảm không phù hợp hồ sơ B2B; đã gỡ bỏ.</p>
+      </article><article class="card">
+        <span class="card-tag">ĐÃ GỠ BỎ · others-ep01.mp4</span>
+        <h3>Đặt ở Creative Agency Social Hook</h3>
+        <p>Cảnh hôn sofa ngôn tình không phù hợp làm mẫu quảng cáo thương hiệu cho Agency/Brand; đã gỡ bỏ.</p>
+      </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <img class="footer-logo" src="assets/brand/logo/masterbrand/avis-masterbrand-full-white.svg" alt="AVIS" height="32">
+      <strong>CÔNG TY CỔ PHẦN AVIS AI (AVIS AI JOINT STOCK COMPANY)</strong><br>
+      MST: 0318832218 · Số 2 Trương Quốc Dung, Quận Phú Nhuận, TP. Hồ Chí Minh · Hệ sinh thái Ninety Eight<br>
+      Liên hệ Hợp tác Doanh nghiệp: <a href="mailto:partnership@avis.xyz">partnership@avis.xyz</a> ·
+      Gateway: <a href="https://avis.xyz" target="_blank" rel="noopener">avis.xyz</a> ·
+      Creative Studio: <a href="https://studio.avis.net" target="_blank" rel="noopener">studio.avis.net</a>
+    </div>
+    <div class="footer-links">
+      PORTAL: <a href="https://avis-proposals.vercel.app">avis-proposals.vercel.app</a><br>
+      BACKLOG MEDIA: <a href="video-requests.html">Bảng Request Video Demo</a><br>
+      BRAND SYSTEM: AVIS OFFICIAL GUIDELINE V2
+    </div>
+  </div>
+</footer>
+<script type="module" src="assets/proposals.js"></script>
+</body>
+</html>

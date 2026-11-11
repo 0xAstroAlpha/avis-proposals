@@ -94,21 +94,21 @@
   --avis-font-sans: 'IBM Plex Sans', -apple-system, 'Segoe UI', Arial, sans-serif;
   --avis-font-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
 
-  /* 8px Spacing Scale */
-  --avis-space-1: 4px;
-  --avis-space-2: 8px;
-  --avis-space-3: 12px;
-  --avis-space-4: 16px;
-  --avis-space-5: 24px;
-  --avis-space-6: 32px;
-  --avis-space-7: 48px;
-  --avis-space-8: 64px;
-  --avis-space-9: 96px;
+  /* 8px Spacing Scale (in rem so layout breathes with OS/browser text scale) */
+  --avis-space-1: 0.25rem;
+  --avis-space-2: 0.5rem;
+  --avis-space-3: 0.75rem;
+  --avis-space-4: 1rem;
+  --avis-space-5: 1.5rem;
+  --avis-space-6: 2rem;
+  --avis-space-7: 2.75rem;
+  --avis-space-8: 3.75rem;
+  --avis-space-9: 5.5rem;
 
   /* Brand V2 Geometry: strictly square blocks, 0 radius */
   --avis-radius: 0px;
-  --max-w: 1280px;
-  --header-h: 64px;
+  --max-w: 80rem;
+  --header-h: 4rem;
 
   /* Official AVIS Triangle Shapes (1:1 cut from logo symbols) */
   --avis-tri-up: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='85.892 25.477 117.5 63.53' width='117.5' height='63.53'%3E%3Cpath d='M90.6957 89.0067H198.591C202.855 89.0067 204.999 83.8443 201.981 80.8259L148.033 26.8781C146.165 25.0096 143.134 25.0096 141.254 26.8781L87.306 80.8259C84.2876 83.8443 86.4196 89.0067 90.6957 89.0067Z' fill='%23000'/%3E%3C/svg%3E");
@@ -207,7 +207,7 @@
   vertical-align: -0.04em;
 }
 
-/* 5. Base Document Reset */
+/* 5. Base Document Reset & Legibility Rules (modern-web-guidance: typography & improve-text-layout-and-legibility) */
 *,
 *::before,
 *::after {
@@ -222,11 +222,28 @@ html {
 body {
   margin: 0;
   font-family: var(--avis-font-sans);
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.55;
+  text-align: start;
+  overflow-wrap: break-word;
   background: var(--avis-white);
   color: var(--brand-text);
   -webkit-font-smoothing: antialiased;
+}
+
+/* Balanced line lengths strictly on short unboxed headings and table headers */
+h1,
+h2,
+h3,
+.benchmark-table th {
+  text-wrap: balance;
+}
+
+/* Prevent orphaned runts strictly on multi-line body paragraphs and list items */
+p,
+.avis-list li,
+.ott-list li {
+  text-wrap: pretty;
 }
 
 a {
@@ -244,7 +261,7 @@ a {
   padding-inline: var(--avis-space-6);
 }
 
-@media (width < 640px) {
+@media (width < 40rem) {
   .container {
     padding-inline: var(--avis-space-4);
   }
@@ -279,7 +296,7 @@ a {
   gap: var(--avis-space-4);
 }
 
-@media (width < 640px) {
+@media (width < 40rem) {
   .header-inner {
     padding-inline: var(--avis-space-4);
   }
@@ -300,21 +317,21 @@ a {
 
 /* Official SVG logo minimum clear space & height >= 24px */
 .site-logo img {
-  block-size: 26px;
+  block-size: 1.625rem;
   inline-size: auto;
   display: block;
 }
 
 .site-logo-divider {
   inline-size: 1px;
-  block-size: 20px;
+  block-size: 1.25rem;
   background: var(--avis-sapphire);
   margin-inline-start: var(--avis-space-2);
 }
 
 .site-logo-tag {
   font-family: var(--avis-font-mono);
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -332,14 +349,15 @@ a {
   display: inline-flex;
   align-items: center;
   gap: var(--avis-space-2);
-  padding: 10px 16px;
+  padding: 0.625rem 1rem;
   border-radius: var(--avis-radius);
   border: 2px solid var(--avis-sapphire);
   background: var(--avis-white);
   color: var(--avis-sapphire);
   font-family: var(--avis-font-mono);
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
+  line-height: 1.2;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   cursor: pointer;
@@ -349,14 +367,14 @@ a {
   list-style: none;
   position: fixed;
   inset: auto;
-  inset-block-start: 68px;
+  inset-block-start: 4.25rem;
   inset-block-start: anchor(--menu-button bottom);
-  inset-inline-end: 16px;
-  inline-size: min(88dvw, 360px);
-  max-inline-size: calc(100dvw - 32px);
+  inset-inline-end: 1rem;
+  inline-size: min(88dvw, 22.5rem);
+  max-inline-size: calc(100dvw - 2rem);
   block-size: fit-content;
-  max-block-size: calc(100dvh - 84px);
-  margin-block-start: 4px;
+  max-block-size: calc(100dvh - 5.25rem);
+  margin-block-start: 0.25rem;
   padding: var(--avis-space-3);
   overflow: auto;
   background: var(--avis-white);
@@ -376,11 +394,12 @@ a {
 
 .site-menu a {
   display: block;
-  padding: 8px 10px;
+  padding: 0.5rem 0.625rem;
   text-decoration: none;
   font-family: var(--avis-font-mono);
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
+  line-height: 1.3;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--avis-sapphire);
@@ -431,11 +450,11 @@ a {
 }
 
 /* ==========================================================================
-   7. Architectural Color-Block Hero + Inline Featured Video
+   7. Architectural Color-Block Hero + Inline Featured Video / Code Stage
    Follows layout-06-media-frame-studio.html & Brand V2 contrast rules:
      - Solid primary block (Azure #0080FB or Sapphire #1B346B), NO gradients
      - Official sub-brand SVG logo on approved primary background
-     - Display H1 >= 36px in white on primary
+     - Display H1 >= 36px (2.25rem) in white on primary, max <= 2.5x min
      - Body copy placed in flush Sapphire / Sea White block (10.3:1 contrast)
    ========================================================================== */
 .hero-shell {
@@ -447,7 +466,7 @@ a {
   grid-template-columns: 1.08fr 0.92fr;
 }
 
-@media (width < 980px) {
+@media (width < 61.25rem) {
   .hero-split {
     grid-template-columns: 1fr;
   }
@@ -463,7 +482,7 @@ a {
   gap: var(--avis-space-5);
 }
 
-@media (width < 640px) {
+@media (width < 40rem) {
   .hero-primary-block {
     padding: var(--avis-space-6) var(--avis-space-4);
   }
@@ -479,18 +498,19 @@ a {
 
 /* Official sub-brand with-name SVG logo >= 32px height */
 .hero-brand-logo {
-  block-size: 38px;
+  block-size: 2.375rem;
   inline-size: auto;
   display: block;
 }
 
 .hero-kicker {
   font-family: var(--avis-font-mono);
-  font-size: 13px;
+  font-size: 0.75rem;
   font-weight: 700;
+  line-height: 1.3;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 6px 10px;
+  padding: 0.375rem 0.625rem;
   background: var(--avis-sapphire);
   color: var(--avis-sea-white);
 }
@@ -498,15 +518,16 @@ a {
 [data-avis-brand="gateway"] .hero-kicker {
   background: var(--avis-azure);
   color: var(--avis-white);
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
+/* Fluid clamp with rem min/max (3.375 / 2.25 = 1.5x <= 2.5x for WCAG 1.4.4 200% zoom) */
 .hero-primary-block h1 {
   margin: 0;
   font-family: var(--avis-font-display);
   font-weight: 700;
-  font-size: clamp(36px, 4.4vw, 60px);
-  line-height: 1.04;
+  font-size: clamp(2.25rem, 1.65rem + 2vw, 3.375rem);
+  line-height: 1.08;
   letter-spacing: -0.015em;
   color: var(--avis-white);
 }
@@ -521,7 +542,7 @@ a {
   border-block-start: 1px solid var(--avis-black);
 }
 
-@media (width < 640px) {
+@media (width < 40rem) {
   .hero-sub-block {
     padding: var(--avis-space-5) var(--avis-space-4);
   }
@@ -529,9 +550,9 @@ a {
 
 .hero-sub-block p {
   margin: 0;
-  font-size: 17px;
-  line-height: 1.6;
-  max-inline-size: 68ch;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  max-inline-size: 62ch;
 }
 
 .hero-actions {
@@ -540,20 +561,30 @@ a {
   gap: var(--avis-space-3);
 }
 
-/* Official Brand V2 Buttons: bold >= 19px on Azure/Primary, 0 radius, flat fill */
+/* Official Brand V2 Buttons: bold >= 1.1875rem (19px) on Azure/Primary, 0 radius, flat fill, zero fixed height */
 .btn {
   display: inline-flex;
   align-items: center;
   gap: var(--avis-space-2);
-  padding: 14px 20px;
+  padding: 0.875rem 1.25rem;
   border-radius: var(--avis-radius);
   font-family: var(--avis-font-sans);
-  font-size: 19px;
+  font-size: 1.1875rem;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.2;
   text-decoration: none;
   cursor: pointer;
   border: 0;
+}
+
+.btn-sm {
+  font-size: 0.9375rem;
+  padding: 0.625rem 1rem;
+}
+
+.btn-xs {
+  font-size: 0.875rem;
+  padding: 0.5625rem 0.875rem;
 }
 
 .btn-cta-turquoise {
@@ -578,9 +609,9 @@ a {
   background: transparent;
   color: var(--avis-white);
   box-shadow: inset 0 0 0 2px var(--avis-sea-white);
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 600;
-  padding: 12px 16px;
+  padding: 0.75rem 1rem;
 }
 
 .btn-outline-light:hover {
@@ -592,9 +623,9 @@ a {
   background: var(--avis-white);
   color: var(--avis-sapphire);
   box-shadow: inset 0 0 0 2px var(--avis-sapphire);
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 600;
-  padding: 12px 16px;
+  padding: 0.75rem 1rem;
 }
 
 .btn-outline-sapphire:hover {
@@ -602,7 +633,7 @@ a {
   color: var(--avis-white);
 }
 
-/* Right Column: Inline Featured Video Stage */
+/* Right Column: Inline Featured Video Stage or API Code Stage */
 .hero-media-stage {
   background: var(--avis-black);
   color: var(--avis-sea-white);
@@ -612,7 +643,7 @@ a {
   justify-content: space-between;
 }
 
-@media (width < 980px) {
+@media (width < 61.25rem) {
   .hero-media-stage {
     border-inline-start: 0;
     border-block-start: 1px solid var(--avis-black);
@@ -628,8 +659,9 @@ a {
   justify-content: space-between;
   gap: var(--avis-space-3);
   font-family: var(--avis-font-mono);
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
+  line-height: 1.3;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   border-block-end: 1px solid var(--avis-black);
@@ -641,24 +673,97 @@ a {
   align-items: center;
   justify-content: center;
   background: var(--avis-black);
-  min-block-size: 320px;
+  min-block-size: 19rem;
 }
 
 .hero-video-frame video {
   display: block;
   inline-size: 100%;
   block-size: auto;
-  max-block-size: 460px;
+  max-block-size: 27rem;
   aspect-ratio: 16 / 9;
   object-fit: contain;
   background: var(--avis-black);
+}
+
+/* AVIS Gateway Unified OpenAI SDK Stage (used when movie clips are irrelevant) */
+.hero-code-frame {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--avis-black);
+  padding: var(--avis-space-5);
+  gap: var(--avis-space-4);
+}
+
+.hero-code-pre {
+  margin: 0;
+  padding: var(--avis-space-4);
+  background: #0a1428;
+  border: 1px solid var(--avis-sapphire);
+  color: var(--avis-sea-white);
+  font-family: var(--avis-font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  overflow-x: auto;
+}
+
+.hero-code-pre .tok-kw {
+  color: var(--avis-electric-turquoise);
+  font-weight: 600;
+}
+
+.hero-code-pre .tok-str {
+  color: var(--avis-baby-blue);
+}
+
+.hero-code-pre .tok-cmt {
+  color: #9db4d8;
+}
+
+.hero-code-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--avis-space-2);
+}
+
+@media (width < 36rem) {
+  .hero-code-metrics {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hero-code-pill {
+  padding: var(--avis-space-3);
+  background: var(--avis-sapphire);
+  color: var(--avis-sea-white);
+  border-block-start: 3px solid var(--avis-electric-turquoise);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.hero-code-pill span {
+  font-family: var(--avis-font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--avis-baby-blue);
+}
+
+.hero-code-pill strong {
+  font-family: var(--avis-font-mono);
+  font-size: 0.875rem;
+  color: var(--avis-white);
 }
 
 .hero-media-caption {
   padding: var(--avis-space-3) var(--avis-space-5);
   background: var(--avis-sea-white);
   color: var(--avis-sapphire);
-  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.4;
   border-block-start: 1px solid var(--avis-sapphire);
   display: flex;
   justify-content: space-between;
@@ -679,31 +784,31 @@ a {
   border-block-start: 1px solid var(--avis-sapphire);
 }
 
-@media (width < 920px) {
+@media (width < 57.5rem) {
   .credential-band {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (width < 540px) {
+@media (width < 33.75rem) {
   .credential-band {
     grid-template-columns: 1fr;
   }
 }
 
 .cred-cell {
-  padding: var(--avis-space-5) var(--avis-space-6);
+  padding: var(--avis-space-4) var(--avis-space-5);
   border-inline-start: 1px solid var(--avis-sapphire);
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 0.25rem;
 }
 
 .cred-cell:first-child {
   border-inline-start: 0;
 }
 
-@media (width < 920px) {
+@media (width < 57.5rem) {
   .cred-cell:nth-child(odd) {
     border-inline-start: 0;
   }
@@ -712,7 +817,7 @@ a {
   }
 }
 
-@media (width < 540px) {
+@media (width < 33.75rem) {
   .cred-cell {
     border-inline-start: 0;
     border-block-start: 1px solid var(--avis-sapphire);
@@ -724,7 +829,7 @@ a {
 
 .cred-cell .mono-label {
   font-family: var(--avis-font-mono);
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -733,12 +838,12 @@ a {
 .cred-cell strong {
   font-family: var(--avis-font-display);
   font-weight: 700;
-  font-size: 32px;
-  line-height: 1.05;
+  font-size: 1.875rem;
+  line-height: 1.08;
 }
 
 .cred-cell span {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.45;
 }
 
@@ -764,8 +869,8 @@ a {
 .section-label {
   font-family: var(--avis-font-sans);
   font-weight: 400;
-  font-size: 18px;
-  line-height: 1.2;
+  font-size: 1.0625rem;
+  line-height: 1.25;
   text-transform: uppercase;
   letter-spacing: 0.03em;
   color: var(--avis-black);
@@ -782,16 +887,18 @@ a {
 }
 
 .section-header {
-  margin-block-end: var(--avis-space-6);
+  margin-block-end: var(--avis-space-5);
 }
 
+/* Fluid clamp with rem min/max (2.375 / 1.625 = 1.46x <= 2.5x) */
 .section-header h2 {
-  margin: 0 0 var(--avis-space-3);
+  margin: 0 0 var(--avis-space-2);
   font-family: var(--avis-font-display);
   font-weight: 700;
-  font-size: clamp(30px, 3.6vw, 44px);
-  line-height: 1.08;
+  font-size: clamp(1.625rem, 1.25rem + 1.3vw, 2.375rem);
+  line-height: 1.12;
   color: var(--avis-sapphire);
+  max-inline-size: 36ch;
 }
 
 .section-sapphire .section-header h2 {
@@ -800,8 +907,9 @@ a {
 
 .section-header p {
   margin: 0;
-  max-inline-size: 74ch;
-  font-size: 17px;
+  max-inline-size: 62ch;
+  font-size: 1.03125rem;
+  line-height: 1.55;
   color: var(--avis-sapphire);
 }
 
@@ -811,13 +919,13 @@ a {
 
 .grid-3 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   gap: var(--avis-space-5);
 }
 
 .grid-2 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
   gap: var(--avis-space-5);
 }
 
@@ -835,11 +943,12 @@ a {
   display: inline-block;
   align-self: flex-start;
   font-family: var(--avis-font-mono);
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 600;
+  line-height: 1.3;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 5px 8px;
+  padding: 0.3125rem 0.5rem;
   background: var(--brand-surface-alt);
   color: var(--avis-sapphire);
 }
@@ -848,14 +957,16 @@ a {
   margin: 0;
   font-family: var(--avis-font-sans);
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.1875rem;
   line-height: 1.3;
   color: var(--avis-sapphire);
 }
 
 .card p {
   margin: 0;
-  font-size: 16px;
+  font-size: 0.96875rem;
+  line-height: 1.55;
+  max-inline-size: 60ch;
   color: var(--avis-sapphire);
 }
 
@@ -873,14 +984,15 @@ a {
   margin: var(--avis-space-3) 0 0;
   padding: 0;
   display: grid;
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .avis-list li {
   position: relative;
-  padding-inline-start: 24px;
-  font-size: 16px;
+  padding-inline-start: 1.5rem;
+  font-size: 0.96875rem;
   line-height: 1.55;
+  max-inline-size: 62ch;
 }
 
 .avis-list li::before {
@@ -888,7 +1000,7 @@ a {
   position: absolute;
   inset-inline-start: 0;
   inset-block-start: 0.52em;
-  inline-size: 12px;
+  inline-size: 0.75rem;
   aspect-ratio: var(--brand-tri-ratio);
   background: var(--brand-marker-color);
   -webkit-mask: var(--brand-tri-mask) center / contain no-repeat;
@@ -896,12 +1008,12 @@ a {
 }
 
 [data-avis-brand="creative-studio"] .avis-list li::before {
-  inline-size: 8px;
+  inline-size: 0.5rem;
   inset-block-start: 0.35em;
 }
 
 /* ==========================================================================
-   9. Inline Direct Video Embed Grid (AVIS Academy R2 Pattern + modern-web-guidance: lazy-load-video-and-audio)
+   9. Inline Direct Video Embed Grid (2-up & 3-up variants, zero empty slots)
    ========================================================================== */
 .video-grid {
   display: grid;
@@ -909,8 +1021,19 @@ a {
   gap: var(--avis-space-5);
 }
 
-@media (width < 860px) {
-  .video-grid {
+.video-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (width < 64rem) {
+  .video-grid--3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (width < 50rem) {
+  .video-grid,
+  .video-grid--3 {
     grid-template-columns: 1fr;
   }
 }
@@ -930,7 +1053,7 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: var(--avis-space-3);
-  padding: 10px 16px;
+  padding: 0.625rem 1rem;
   background: var(--avis-sea-white);
   color: var(--avis-sapphire);
   border-block-end: 1px solid var(--avis-sapphire);
@@ -938,7 +1061,7 @@ a {
 
 .video-head-tag {
   font-family: var(--avis-font-mono);
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -946,11 +1069,12 @@ a {
 
 .video-head-ratio {
   font-family: var(--avis-font-mono);
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 600;
-  padding: 2px 6px;
+  padding: 0.125rem 0.375rem;
   background: var(--avis-sapphire);
   color: var(--avis-white);
+  flex-shrink: 0;
 }
 
 .video-stage {
@@ -975,21 +1099,23 @@ a {
   padding: var(--avis-space-4) var(--avis-space-5);
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 0.375rem;
   border-block-start: 1px solid var(--avis-sapphire);
   flex: 1;
 }
 
 .video-caption h3 {
   margin: 0;
-  font-size: 18px;
+  font-size: 1.0625rem;
   font-weight: 600;
+  line-height: 1.3;
   color: var(--avis-sapphire);
 }
 
 .video-caption p {
   margin: 0;
-  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.5;
   color: var(--avis-sapphire);
 }
 
@@ -1031,7 +1157,7 @@ a {
   scroll-snap-type: inline proximity;
   scroll-padding-inline: 2.5rem;
   border-block-end: 2px solid var(--avis-sapphire);
-  gap: 4px;
+  gap: 0.25rem;
   scrollbar-width: none;
   --fade-size: 2.5rem;
   --fade-dir: right;
@@ -1067,10 +1193,11 @@ a {
   appearance: none;
   border: 0;
   background: var(--avis-white);
-  padding: 14px 18px;
+  padding: 0.875rem 1.125rem;
   font-family: var(--avis-font-mono);
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 600;
+  line-height: 1.25;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--avis-sapphire);
@@ -1105,11 +1232,11 @@ a {
   border-block-start: 0;
   padding: var(--avis-space-6);
   display: grid;
-  grid-template-columns: 1.35fr 0.85fr;
+  grid-template-columns: 1.4fr 0.8fr;
   gap: var(--avis-space-6);
 }
 
-@media (width < 800px) {
+@media (width < 50rem) {
   .tabpanel-card {
     grid-template-columns: 1fr;
     padding: var(--avis-space-5);
@@ -1118,13 +1245,15 @@ a {
 
 .tabpanel-card h3 {
   margin: 0 0 var(--avis-space-2);
-  font-size: 22px;
+  font-size: 1.3125rem;
   font-weight: 600;
+  line-height: 1.25;
   color: var(--avis-sapphire);
 }
 
 .tabpanel-card p {
   margin: 0;
+  max-inline-size: 60ch;
   color: var(--avis-sapphire);
 }
 
@@ -1138,28 +1267,28 @@ a {
 .tabpanel-meta strong {
   display: block;
   font-family: var(--avis-font-mono);
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--avis-sapphire);
-  padding-block-end: 8px;
+  padding-block-end: 0.5rem;
   border-block-end: 1px solid var(--avis-sapphire);
-  margin-block-end: 10px;
+  margin-block-end: 0.625rem;
 }
 
 /* ==========================================================================
-   11. OTT & Film Distribution Network Solid Block (Flat Sapphire, Zero Gradients)
+   11. Ecosystem & Optional Strategic Tier Panel (Flat Sapphire, Zero Gradients)
    ========================================================================== */
 .ott-panel {
   background: var(--avis-sapphire);
   color: var(--avis-sea-white);
   border: 2px solid var(--avis-black);
   display: grid;
-  grid-template-columns: 1.25fr 1fr;
+  grid-template-columns: 1.2fr 1fr;
 }
 
-@media (width < 880px) {
+@media (width < 55rem) {
   .ott-panel {
     grid-template-columns: 1fr;
   }
@@ -1171,7 +1300,7 @@ a {
 
 .ott-eyebrow {
   font-family: var(--avis-font-mono);
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1179,21 +1308,41 @@ a {
   margin-block-end: var(--avis-space-3);
   display: flex;
   align-items: center;
+  gap: var(--avis-space-2);
+  flex-wrap: wrap;
+}
+
+.optional-badge {
+  display: inline-block;
+  font-family: var(--avis-font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  background: var(--avis-electric-turquoise);
+  color: var(--avis-sapphire);
+}
+
+[data-avis-brand="gateway"] .optional-badge {
+  background: var(--avis-azure);
+  color: var(--avis-white);
 }
 
 .ott-main h3 {
   margin: 0 0 var(--avis-space-3);
   font-family: var(--avis-font-display);
   font-weight: 700;
-  font-size: clamp(26px, 3vw, 36px);
-  line-height: 1.1;
+  font-size: clamp(1.4375rem, 1.15rem + 1vw, 2rem);
+  line-height: 1.14;
   color: var(--avis-white);
 }
 
 .ott-main p {
   margin: 0;
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 0.96875rem;
+  line-height: 1.58;
+  max-inline-size: 60ch;
   color: var(--avis-sea-white);
 }
 
@@ -1209,7 +1358,7 @@ a {
   align-content: center;
 }
 
-@media (width < 880px) {
+@media (width < 55rem) {
   .ott-list {
     border-inline-start: 0;
     border-block-start: 2px solid var(--avis-black);
@@ -1217,36 +1366,40 @@ a {
 }
 
 .ott-list li {
-  padding-inline-start: 16px;
+  padding-inline-start: 1rem;
   border-inline-start: 4px solid var(--avis-azure);
-  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.5;
 }
 
 /* ==========================================================================
-   12. Responsive Benchmark Table (modern-web-guidance: responsive-table)
+   12. Responsive Benchmark & Video Request Tables (modern-web-guidance: responsive-table)
    ========================================================================== */
 .table-wrapper {
   overflow: auto;
   max-inline-size: 100%;
-  max-block-size: min(580px, 80dvh);
+  max-block-size: min(36rem, 80dvh);
   container-type: inline-size;
   border: 1px solid var(--avis-sapphire);
   background: var(--avis-white);
+}
+
+.table-wrapper--tall {
+  max-block-size: min(48rem, 82dvh);
 }
 
 .benchmark-table {
   inline-size: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  font-size: 15px;
+  font-size: 0.9375rem;
 }
 
 .benchmark-table caption {
   text-align: start;
-  padding: 14px 18px;
+  padding: 0.875rem 1.125rem;
   font-family: var(--avis-font-mono);
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -1265,22 +1418,23 @@ a {
   background: var(--avis-sapphire);
   color: var(--avis-white);
   font-family: var(--avis-font-mono);
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   text-align: start;
-  padding: 12px 16px;
+  padding: 0.75rem 1rem;
   border-block-end: 1px solid var(--avis-black);
   white-space: nowrap;
 }
 
 .benchmark-table tbody th,
 .benchmark-table tbody td {
-  padding: 14px 16px;
+  padding: 0.875rem 1rem;
   border-block-end: 1px solid var(--avis-sea-white);
   vertical-align: top;
   color: var(--avis-sapphire);
+  line-height: 1.5;
 }
 
 .benchmark-table tbody th {
@@ -1292,7 +1446,7 @@ a {
   font-weight: 600;
 }
 
-@container (width < 620px) {
+@container (width < 42rem) {
   .benchmark-table,
   .benchmark-table thead,
   .benchmark-table tbody,
@@ -1307,7 +1461,7 @@ a {
   }
 
   .benchmark-table tr {
-    margin: 12px;
+    margin: 0.75rem;
     border: 1px solid var(--avis-sapphire);
   }
 
@@ -1333,14 +1487,105 @@ a {
     content: var(--label-4) ": ";
     font-weight: 700;
   }
+
+  .benchmark-table td:nth-child(5)::before {
+    content: var(--label-5) ": ";
+    font-weight: 700;
+  }
+
+  .benchmark-table td:nth-child(6)::before {
+    content: var(--label-6) ": ";
+    font-weight: 700;
+  }
+}
+
+/* Filter Bar & Priority Badges for Video Demo Request Page */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--avis-space-2);
+  margin-block-end: var(--avis-space-4);
+}
+
+.filter-chip {
+  appearance: none;
+  position: relative;
+  border: 1px solid var(--avis-sapphire);
+  border-radius: var(--avis-radius);
+  background: var(--avis-white);
+  color: var(--avis-sapphire);
+  padding: 0.5rem 0.875rem;
+  font-family: var(--avis-font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.filter-chip:hover {
+  background: var(--avis-sea-white);
+}
+
+.filter-chip[aria-pressed="true"] {
+  background: var(--avis-sapphire);
+  color: var(--avis-white);
+}
+
+.filter-chip[aria-pressed="true"]::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  border-block-end: 3px solid var(--avis-azure);
+}
+
+.filter-count {
+  margin-inline-start: auto;
+  font-family: var(--avis-font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--avis-sapphire);
+}
+
+.prio-badge {
+  display: inline-block;
+  font-family: var(--avis-font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  white-space: nowrap;
+}
+
+.prio-p0 {
+  background: var(--avis-sapphire);
+  color: var(--avis-white);
+  border-inline-start: 4px solid var(--avis-azure);
+}
+
+.prio-p1 {
+  background: var(--avis-baby-azure);
+  color: var(--avis-sapphire);
+  border: 1px solid var(--avis-sapphire);
+}
+
+.prio-p2 {
+  background: var(--avis-sea-white);
+  color: var(--avis-sapphire);
+  border: 1px dashed var(--avis-sapphire);
 }
 
 /* ==========================================================================
-   13. PoC Steps & Footer (Official -white cutout SVG logo on pure #000000 Black)
+   13. PoC / Onboarding Steps & Footer (Official -white cutout SVG logo on #000000)
    ========================================================================== */
 .steps-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15.5rem, 1fr));
   gap: 0;
   border: 1px solid var(--avis-sapphire);
 }
@@ -1356,9 +1601,14 @@ a {
   border-inline-start: 0;
 }
 
+.step-box--optional {
+  background: var(--avis-sea-white);
+  border-block-start-color: var(--avis-sapphire);
+}
+
 .step-week {
   font-family: var(--avis-font-mono);
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1366,15 +1616,17 @@ a {
 }
 
 .step-box h3 {
-  margin: 8px 0 8px;
-  font-size: 18px;
+  margin: 0.5rem 0;
+  font-size: 1.0625rem;
   font-weight: 600;
+  line-height: 1.3;
   color: var(--avis-sapphire);
 }
 
 .step-box p {
   margin: 0;
-  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.5;
   color: var(--avis-sapphire);
 }
 
@@ -1383,7 +1635,8 @@ a {
   color: var(--avis-sea-white);
   padding-block: var(--avis-space-7);
   border-block-start: 1px solid var(--avis-black);
-  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.6;
 }
 
 .footer-grid {
@@ -1395,7 +1648,7 @@ a {
 }
 
 .footer-logo {
-  block-size: 32px;
+  block-size: 2rem;
   inline-size: auto;
   display: block;
   margin-block-end: var(--avis-space-3);
@@ -1407,7 +1660,7 @@ a {
 
 .footer-links {
   font-family: var(--avis-font-mono);
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 1.9;
 }
 
@@ -1420,12 +1673,15 @@ a {
   .video-figure,
   .ott-panel,
   .tabpanel-card,
-  .site-menu {
+  .site-menu,
+  .filter-chip,
+  .prio-badge {
     border: 1px solid ButtonText;
   }
 
   .site-menu a[aria-current="page"],
-  .tablist-scroller [aria-selected="true"] {
+  .tablist-scroller [aria-selected="true"],
+  .filter-chip[aria-pressed="true"] {
     outline: 2px solid Highlight;
     outline-offset: -2px;
   }
@@ -1435,7 +1691,8 @@ a {
   .site-header,
   .hero-actions,
   .hero-media-stage,
-  .video-stage {
+  .video-stage,
+  .filter-bar {
     display: none !important;
   }
 
