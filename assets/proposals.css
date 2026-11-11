@@ -115,52 +115,16 @@
   --avis-tri-play: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='124.831 18.97 56.86 105.165' width='56.86' height='105.165'%3E%3Cpath d='M124.831 23.27L124.831 119.838C124.831 123.655 129.451 125.574 132.153 122.872L180.437 74.588C182.109 72.9156 182.109 70.2034 180.437 68.5203L132.153 20.2361C129.451 17.5346 124.831 19.4428 124.831 23.27Z' fill='%23000'/%3E%3C/svg%3E");
 }
 
-/* 3. Sub-brand Semantic Theme Mapping (strictly honoring row matrix in design-guidelines.md) */
+/* 3. Unified AVIS Masterbrand Theme Mapping (1 single white-blue AVIS logo & palette across all pages) */
 :root,
-[data-avis-brand="masterbrand"] {
-  --brand-primary: var(--avis-azure);
-  --brand-on-primary: var(--avis-white);
-  --brand-hero-sub-bg: var(--avis-sapphire);
-  --brand-hero-sub-fg: var(--avis-sea-white);
-  --brand-band-bg: var(--avis-electric-turquoise);
-  --brand-band-fg: var(--avis-sapphire);
-  --brand-text: var(--avis-sapphire);
-  --brand-surface: var(--avis-white);
-  --brand-surface-alt: var(--avis-sea-white);
-  --brand-surface-soft: var(--avis-baby-azure);
-  --brand-dark-bg: var(--avis-sapphire);
-  --brand-dark-fg: var(--avis-sea-white);
-  --brand-dark-accent: var(--avis-electric-turquoise);
-  --brand-marker-color: var(--avis-azure);
-  --brand-tri-mask: var(--avis-tri-up);
-  --brand-tri-ratio: 117.5 / 63.53;
-}
-
-[data-avis-brand="creative-studio"] {
-  --brand-primary: var(--avis-azure);
-  --brand-on-primary: var(--avis-white);
-  --brand-hero-sub-bg: var(--avis-sapphire);
-  --brand-hero-sub-fg: var(--avis-sea-white);
-  --brand-band-bg: var(--avis-electric-turquoise);
-  --brand-band-fg: var(--avis-sapphire);
-  --brand-text: var(--avis-sapphire);
-  --brand-surface: var(--avis-white);
-  --brand-surface-alt: var(--avis-baby-azure);
-  --brand-surface-soft: var(--avis-baby-turquoise);
-  --brand-dark-bg: var(--avis-sapphire);
-  --brand-dark-fg: var(--avis-sea-white);
-  --brand-dark-accent: var(--avis-electric-turquoise);
-  --brand-marker-color: var(--avis-azure);
-  --brand-tri-mask: var(--avis-tri-play);
-  --brand-tri-ratio: 56.86 / 105.165;
-}
-
+[data-avis-brand="masterbrand"],
+[data-avis-brand="creative-studio"],
 [data-avis-brand="gateway"] {
-  --brand-primary: var(--avis-sapphire);
-  --brand-on-primary: var(--avis-sea-white);
-  --brand-hero-sub-bg: var(--avis-sea-white);
-  --brand-hero-sub-fg: var(--avis-sapphire);
-  --brand-band-bg: var(--avis-baby-blue);
+  --brand-primary: var(--avis-azure);
+  --brand-on-primary: var(--avis-white);
+  --brand-hero-sub-bg: var(--avis-sapphire);
+  --brand-hero-sub-fg: var(--avis-sea-white);
+  --brand-band-bg: var(--avis-electric-turquoise);
   --brand-band-fg: var(--avis-sapphire);
   --brand-text: var(--avis-sapphire);
   --brand-surface: var(--avis-white);
@@ -168,8 +132,8 @@
   --brand-surface-soft: var(--avis-baby-azure);
   --brand-dark-bg: var(--avis-sapphire);
   --brand-dark-fg: var(--avis-sea-white);
-  --brand-dark-accent: var(--avis-baby-blue);
-  --brand-marker-color: var(--avis-sapphire);
+  --brand-dark-accent: var(--avis-electric-turquoise);
+  --brand-marker-color: var(--avis-azure);
   --brand-tri-mask: var(--avis-tri-up);
   --brand-tri-ratio: 117.5 / 63.53;
 }
@@ -269,14 +233,14 @@ a {
 
 /* ==========================================================================
    6. Responsive Site Header & Navigation (modern-web-guidance: navbar)
-   Logo placed strictly on approved pure White (#FFFFFF) surface
+   Unified Sapphire (#1B346B) surface so the single white-blue AVIS logo renders with crisp contrast
    ========================================================================== */
 .site-header {
   position: sticky;
   inset-block-start: 0;
   z-index: 90;
-  background: var(--avis-white);
-  color: var(--avis-sapphire);
+  background: var(--avis-sapphire);
+  color: var(--avis-sea-white);
   border-block-end: 1px solid var(--avis-black);
 }
 
@@ -325,7 +289,7 @@ a {
 .site-logo-divider {
   inline-size: 1px;
   block-size: 1.25rem;
-  background: var(--avis-sapphire);
+  background: var(--avis-sea-white);
   margin-inline-start: var(--avis-space-2);
 }
 
@@ -335,7 +299,7 @@ a {
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--avis-sapphire);
+  color: var(--avis-sea-white);
 }
 
 .site-nav {
@@ -351,9 +315,9 @@ a {
   gap: var(--avis-space-2);
   padding: 0.625rem 1rem;
   border-radius: var(--avis-radius);
-  border: 2px solid var(--avis-sapphire);
-  background: var(--avis-white);
-  color: var(--avis-sapphire);
+  border: 2px solid var(--avis-sea-white);
+  background: var(--avis-sapphire);
+  color: var(--avis-white);
   font-family: var(--avis-font-mono);
   font-size: 0.75rem;
   font-weight: 600;
@@ -361,6 +325,11 @@ a {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+.menu-button:hover {
+  background: var(--avis-azure);
+  border-color: var(--avis-azure);
 }
 
 .site-menu {
@@ -377,9 +346,9 @@ a {
   margin-block-start: 0.25rem;
   padding: var(--avis-space-3);
   overflow: auto;
-  background: var(--avis-white);
-  color: var(--avis-sapphire);
-  border: 2px solid var(--avis-sapphire);
+  background: var(--avis-sapphire);
+  color: var(--avis-sea-white);
+  border: 2px solid var(--avis-black);
   border-radius: var(--avis-radius);
 }
 
@@ -402,18 +371,19 @@ a {
   line-height: 1.3;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--avis-sapphire);
+  color: var(--avis-sea-white);
   position: relative;
 }
 
 .site-menu a:hover {
-  background: var(--avis-sea-white);
+  background: var(--avis-azure);
+  color: var(--avis-white);
 }
 
 /* WCAG 1.4.1: current page indicated by shape (3px solid bottom bar) + high-contrast fill */
 .site-menu a[aria-current="page"] {
-  background: var(--avis-sapphire);
-  color: var(--avis-white);
+  background: var(--avis-white);
+  color: var(--avis-sapphire);
   font-weight: 700;
 }
 
@@ -511,12 +481,6 @@ a {
   padding: 0.375rem 0.625rem;
   background: var(--avis-sapphire);
   color: var(--avis-sea-white);
-}
-
-[data-avis-brand="gateway"] .hero-kicker {
-  background: var(--avis-azure);
-  color: var(--avis-white);
-  font-size: 0.875rem;
 }
 
 /* Fluid clamp with rem min/max (3.125 / 2.125 = 1.47x <= 2.5x for WCAG 1.4.4 200% zoom) */
@@ -746,6 +710,82 @@ a {
 
 .hero-media-caption strong {
   font-weight: 600;
+}
+
+/* Hero 16:9 Video Placeholder Frame (modeled directly on .media in layout-06-media-frame-studio.html) */
+.hero-video-placeholder {
+  position: relative;
+  inline-size: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--avis-baby-azure);
+  color: var(--avis-sapphire);
+  border-block-start: 1px solid var(--avis-sapphire);
+  display: grid;
+  place-items: center;
+  padding: var(--avis-space-6);
+  overflow: clip;
+}
+
+@media (width < 40rem) {
+  .hero-video-placeholder {
+    padding: var(--avis-space-4);
+  }
+}
+
+.hero-video-placeholder-meta {
+  position: absolute;
+  inset-block-start: var(--avis-space-4);
+  inset-inline: var(--avis-space-5);
+  display: flex;
+  align-items: safe center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--avis-space-2);
+  font-family: var(--avis-font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--avis-sapphire);
+}
+
+.hero-video-placeholder-spec {
+  padding: 0.1875rem 0.5rem;
+  background: var(--avis-sapphire);
+  color: var(--avis-white);
+}
+
+.hero-video-placeholder-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--avis-space-3);
+  text-align: center;
+}
+
+.hero-video-placeholder-play {
+  inline-size: 4rem;
+  block-size: 4rem;
+  background: var(--avis-azure);
+  color: var(--avis-white);
+  display: grid;
+  place-items: center;
+}
+
+.hero-video-placeholder-play .avis-tri {
+  block-size: 1.5rem;
+  inline-size: auto;
+  margin-inline-start: 0.1875rem;
+}
+
+.hero-video-placeholder-title {
+  font-family: var(--avis-font-mono);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--avis-sapphire);
 }
 
 /* Flush Credential Stat Band (modeled directly on .cap in layout-06-media-frame-studio.html) */
@@ -978,11 +1018,6 @@ a {
   background: var(--brand-marker-color);
   -webkit-mask: var(--brand-tri-mask) center / contain no-repeat;
   mask: var(--brand-tri-mask) center / contain no-repeat;
-}
-
-[data-avis-brand="creative-studio"] .avis-list li::before {
-  inline-size: 0.5rem;
-  inset-block-start: 0.35em;
 }
 
 /* ==========================================================================
@@ -1300,11 +1335,6 @@ a {
   padding: 0.2rem 0.5rem;
   background: var(--avis-electric-turquoise);
   color: var(--avis-sapphire);
-}
-
-[data-avis-brand="gateway"] .optional-badge {
-  background: var(--avis-azure);
-  color: var(--avis-white);
 }
 
 .ott-main h3 {
@@ -1652,6 +1682,7 @@ a {
   .btn,
   .card,
   .video-figure,
+  .hero-video-placeholder,
   .ott-panel,
   .tabpanel-card,
   .site-menu,
@@ -1671,6 +1702,7 @@ a {
 @media print {
   .site-header,
   .hero-actions,
+  .hero-video-placeholder,
   .video-stage,
   .filter-bar {
     display: none !important;

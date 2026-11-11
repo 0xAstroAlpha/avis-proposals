@@ -192,29 +192,7 @@ if (!Object.hasOwn(HTMLElement.prototype, "popover")) {
   }
 })();
 
-// 4. Copy Shareable Link & Print Page Buttons
-(() => {
-  for (const btn of document.querySelectorAll("[data-copy-url]")) {
-    btn.addEventListener("click", async () => {
-      const targetUrl = btn.getAttribute("data-copy-url") || window.location.href;
-      const resolved = new URL(targetUrl, window.location.href).href;
-      try {
-        await navigator.clipboard.writeText(resolved);
-        const orig = btn.textContent;
-        btn.textContent = "ĐÃ SAO CHÉP LINK ✓";
-        setTimeout(() => {
-          btn.textContent = orig;
-        }, 1800);
-      } catch (_) {}
-    });
-  }
-
-  for (const btn of document.querySelectorAll("[data-print-page]")) {
-    btn.addEventListener("click", () => window.print());
-  }
-})();
-
-// 5. Filterable Video Demo Use-Case Request Table (video-requests.html)
+// 4. Filterable Video Demo Use-Case Request Table (video-requests.html)
 (() => {
   const chips = Array.from(document.querySelectorAll("[data-video-filter]"));
   if (!chips.length) return;
