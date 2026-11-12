@@ -150,44 +150,46 @@ if (!Object.hasOwn(HTMLElement.prototype, "popover")) {
   const supportsLazyMedia = Object.hasOwn(HTMLMediaElement.prototype, "loading");
   if (!supportsLazyMedia) {
     const lazyVideos = document.querySelectorAll('video[loading="lazy"]');
+    const restoreMedia = (media, observer) => {
+      if (media.dataset.poster) {
+        media.poster = media.dataset.poster;
+        delete media.dataset.poster;
+      }
+      if (media.dataset.preload) {
+        media.preload = media.dataset.preload;
+        delete media.dataset.preload;
+      }
+      for (const source of media.querySelectorAll("source[data-src]")) {
+        source.src = source.dataset.src;
+        delete source.dataset.src;
+      }
+      if (media.dataset.src) {
+        media.src = media.dataset.src;
+        delete media.dataset.src;
+      }
+      observer?.unobserve(media);
+    };
+
     const mediaObserver = new IntersectionObserver(
       (entries, observer) => {
         for (const entry of entries) {
           if (!entry.isIntersecting) continue;
-          const media = entry.target;
-          if (media.dataset.poster) {
-            media.poster = media.dataset.poster;
-            delete media.dataset.poster;
-          }
-          if (media.dataset.preload) {
-            media.preload = media.dataset.preload;
-            delete media.dataset.preload;
-          }
-          for (const source of media.querySelectorAll("source[data-src]")) {
-            source.src = source.dataset.src;
-            delete source.dataset.src;
-          }
-          media.load();
-          observer.unobserve(media);
+          restoreMedia(entry.target, observer);
         }
       },
-      { rootMargin: "240px 0px" }
+      { rootMargin: "360px 0px" }
     );
 
     for (const media of lazyVideos) {
+      // Only defer poster fetch; NEVER strip src/<source src> so native Play always has a valid media source immediately
       if (media.hasAttribute("poster")) {
         media.dataset.poster = media.getAttribute("poster");
         media.removeAttribute("poster");
       }
-      if (media.hasAttribute("preload") && media.getAttribute("preload") !== "none") {
-        media.dataset.preload = media.getAttribute("preload");
-      }
-      for (const source of media.querySelectorAll("source[src]")) {
-        source.dataset.src = source.getAttribute("src");
-        source.removeAttribute("src");
-      }
       media.preload = "none";
       mediaObserver.observe(media);
+      media.addEventListener("pointerdown", () => restoreMedia(media, mediaObserver), { once: true });
+      media.addEventListener("focus", () => restoreMedia(media, mediaObserver), { once: true });
     }
   }
 })();
