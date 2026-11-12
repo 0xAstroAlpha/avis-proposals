@@ -233,14 +233,14 @@ a {
 
 /* ==========================================================================
    6. Responsive Site Header & Navigation (modern-web-guidance: navbar)
-   Unified Sapphire (#1B346B) surface so the single white-blue AVIS logo renders with crisp contrast
+   Clean White (#FFFFFF) navbar surface with Azure blue logo and Sapphire text
    ========================================================================== */
 .site-header {
   position: sticky;
   inset-block-start: 0;
   z-index: 90;
-  background: var(--avis-sapphire);
-  color: var(--avis-sea-white);
+  background: var(--avis-white);
+  color: var(--avis-sapphire);
   border-block-end: 1px solid var(--avis-black);
 }
 
@@ -289,7 +289,7 @@ a {
 .site-logo-divider {
   inline-size: 1px;
   block-size: 1.25rem;
-  background: var(--avis-sea-white);
+  background: var(--avis-sapphire);
   margin-inline-start: var(--avis-space-2);
 }
 
@@ -299,7 +299,7 @@ a {
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--avis-sea-white);
+  color: var(--avis-sapphire);
 }
 
 .site-nav {
@@ -315,9 +315,9 @@ a {
   gap: var(--avis-space-2);
   padding: 0.625rem 1rem;
   border-radius: var(--avis-radius);
-  border: 2px solid var(--avis-sea-white);
-  background: var(--avis-sapphire);
-  color: var(--avis-white);
+  border: 2px solid var(--avis-sapphire);
+  background: var(--avis-white);
+  color: var(--avis-sapphire);
   font-family: var(--avis-font-mono);
   font-size: 0.75rem;
   font-weight: 600;
@@ -329,6 +329,7 @@ a {
 
 .menu-button:hover {
   background: var(--avis-azure);
+  color: var(--avis-white);
   border-color: var(--avis-azure);
 }
 
@@ -346,9 +347,9 @@ a {
   margin-block-start: 0.25rem;
   padding: var(--avis-space-3);
   overflow: auto;
-  background: var(--avis-sapphire);
-  color: var(--avis-sea-white);
-  border: 2px solid var(--avis-black);
+  background: var(--avis-white);
+  color: var(--avis-sapphire);
+  border: 2px solid var(--avis-sapphire);
   border-radius: var(--avis-radius);
 }
 
@@ -371,19 +372,18 @@ a {
   line-height: 1.3;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--avis-sea-white);
+  color: var(--avis-sapphire);
   position: relative;
 }
 
 .site-menu a:hover {
-  background: var(--avis-azure);
-  color: var(--avis-white);
+  background: var(--avis-sea-white);
 }
 
 /* WCAG 1.4.1: current page indicated by shape (3px solid bottom bar) + high-contrast fill */
 .site-menu a[aria-current="page"] {
-  background: var(--avis-white);
-  color: var(--avis-sapphire);
+  background: var(--avis-sapphire);
+  color: var(--avis-white);
   font-weight: 700;
 }
 
